@@ -1,0 +1,11 @@
+============
+empty object
+============
+
+{}
+
+---
+
+(source_file
+  (expr
+    (object)))
