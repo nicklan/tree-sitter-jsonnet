@@ -1,0 +1,30 @@
+==============
+computed array
+==============
+
+[
+  x, for x in [1,2,3] if x % 2 != 0
+]
+
+---
+
+ (source_file
+   (expr
+     (comparray
+       (id)
+       (forspec
+         (id)
+         (array
+           (expr
+             (number))
+           (expr
+             (number))
+           (expr
+             (number))))
+       (compspec
+         (ifspec
+           (binary_expr
+             (binary_expr
+               (id)
+               (number))
+             (number)))))))

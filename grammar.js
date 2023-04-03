@@ -18,6 +18,10 @@ const PREC = {
 module.exports = grammar({
   name: 'jsonnet',
 
+  conflicts: $ => [
+    [$.expr, $.comparray],
+  ],
+
   rules: {
     source_file: $ => $.expr,
 
@@ -36,6 +40,7 @@ module.exports = grammar({
       $.objadd,
       $.slice_expr,
       $.array,
+      $.comparray,
       $.id,
       $.bindexpr,
       $.import,
@@ -94,7 +99,6 @@ module.exports = grammar({
 
     objlocal: $ => seq("local", $.bind),
 
-    // need to add '+' and the (params) forms
     field: $ => seq(
       $.fieldname,
       optional('+'),
@@ -129,6 +133,24 @@ module.exports = grammar({
     )),
 
     array: $ => seq("[", optTrailingCommaSep($.expr), "]"),
+
+    comparray: $=> seq(
+      "[",
+      $._expr,
+      optional(","),
+      $.forspec,
+      optional($.compspec),
+      "]",
+    ),
+
+    compspec: $ => choice(
+      $.forspec,
+      $.ifspec
+    ),
+
+    forspec: $ => seq("for", $.id, "in", $._expr),
+
+    ifspec: $ => seq("if", $._expr),
 
     import: $ => seq(choice(
       "import",
@@ -221,9 +243,9 @@ module.exports = grammar({
 });
 
 function trailingCommaSep(rule) {
-  return seq(rule, repeat(seq(",", rule)), optional(","))
+  return seq(rule, repeat(seq(",", rule)), optional(","));
 }
 
 function optTrailingCommaSep(rule) {
-  return optional(trailingCommaSep(rule))
+  return optional(trailingCommaSep(rule));
 }
