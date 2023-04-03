@@ -34,10 +34,13 @@ module.exports = grammar({
       $.number,
       $.object,
       $.objadd,
+      $.slice_expr,
       $.array,
+      $.id,
       $.bindexpr,
       $.import,
       $.functiondef,
+      $.functionapp,
       $.index,
       $.unary_expr,
       $.binary_expr,
@@ -84,10 +87,12 @@ module.exports = grammar({
     object: $ => seq("{", optTrailingCommaSep($.member), "}"),
 
     member: $ => choice(
-      // $.objlocal,
-      // $.assert,
+      $.objlocal,
+      $.assert_expr,
       $.field
     ),
+
+    objlocal: $ => seq("local", $.bind),
 
     // need to add '+' and the (params) forms
     field: $ => seq($.fieldname, $.hsep, $.value),
@@ -104,6 +109,20 @@ module.exports = grammar({
 
     objadd: $ => prec.left(PREC.add, seq($._expr, $.object)),
 
+    slice_expr: $ => prec.left(PREC.appindex, seq(
+      $._expr,
+      "[",
+      field('start', $._expr),
+      optional(
+        seq(":", field('end', $._expr),
+            optional(
+              seq(":", field('inc', $._expr))
+            )
+           )
+      ),
+      "]"
+    )),
+
     array: $ => seq("[", optTrailingCommaSep($.expr), "]"),
 
     import: $ => seq(choice(
@@ -116,7 +135,14 @@ module.exports = grammar({
 
     bind: $ => choice(
       seq($.id, "=", $.expr),
-      // need other form
+      seq(
+        $.id,
+        "(",
+        field('params', optTrailingCommaSep($.param)),
+        ")",
+        "=",
+        $.expr
+      )
     ),
 
     functiondef: $ => seq(
@@ -126,6 +152,23 @@ module.exports = grammar({
       ")",
       $.expr
     ),
+
+    functionapp: $ => prec.left(PREC.appindex, seq(
+      field('funcname', $._expr),
+      "(",
+      optional($.args),
+      ")",
+    )),
+
+    args: $ => choice(
+      seq(
+        trailingCommaSep(field('arg', $._expr)),
+        optTrailingCommaSep($.default_arg),
+      ),
+      trailingCommaSep($.default_arg),
+    ),
+
+    default_arg: $ => seq($.id, "=", $._expr),
 
     param: $ => seq($.id, optional(seq("=", $.expr))),
 

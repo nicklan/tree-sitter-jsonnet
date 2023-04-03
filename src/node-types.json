@@ -1,5 +1,123 @@
 [
   {
+    "type": "args",
+    "named": true,
+    "fields": {
+      "arg": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "assert_expr",
+            "named": true
+          },
+          {
+            "type": "binary_expr",
+            "named": true
+          },
+          {
+            "type": "bindexpr",
+            "named": true
+          },
+          {
+            "type": "error_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "functionapp",
+            "named": true
+          },
+          {
+            "type": "functiondef",
+            "named": true
+          },
+          {
+            "type": "id",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "import",
+            "named": true
+          },
+          {
+            "type": "in_super_expr",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "null",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "objadd",
+            "named": true
+          },
+          {
+            "type": "object",
+            "named": true
+          },
+          {
+            "type": "outer",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "slice_expr",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "super",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "default_arg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "array",
     "named": true,
     "fields": {},
@@ -47,7 +165,15 @@
           "named": true
         },
         {
+          "type": "functionapp",
+          "named": true
+        },
+        {
           "type": "functiondef",
+          "named": true
+        },
+        {
+          "type": "id",
           "named": true
         },
         {
@@ -88,6 +214,10 @@
         },
         {
           "type": "self",
+          "named": true
+        },
+        {
+          "type": "slice_expr",
           "named": true
         },
         {
@@ -142,7 +272,15 @@
             "named": true
           },
           {
+            "type": "functionapp",
+            "named": true
+          },
+          {
             "type": "functiondef",
+            "named": true
+          },
+          {
+            "type": "id",
             "named": true
           },
           {
@@ -183,6 +321,10 @@
           },
           {
             "type": "self",
+            "named": true
+          },
+          {
+            "type": "slice_expr",
             "named": true
           },
           {
@@ -314,7 +456,15 @@
             "named": true
           },
           {
+            "type": "functionapp",
+            "named": true
+          },
+          {
             "type": "functiondef",
+            "named": true
+          },
+          {
+            "type": "id",
             "named": true
           },
           {
@@ -358,6 +508,10 @@
             "named": true
           },
           {
+            "type": "slice_expr",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -380,7 +534,22 @@
   {
     "type": "bind",
     "named": true,
-    "fields": {},
+    "fields": {
+      "params": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "param",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
@@ -416,11 +585,11 @@
     }
   },
   {
-    "type": "error_expr",
+    "type": "default_arg",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
@@ -448,7 +617,15 @@
           "named": true
         },
         {
+          "type": "functionapp",
+          "named": true
+        },
+        {
           "type": "functiondef",
+          "named": true
+        },
+        {
+          "type": "id",
           "named": true
         },
         {
@@ -489,6 +666,117 @@
         },
         {
           "type": "self",
+          "named": true
+        },
+        {
+          "type": "slice_expr",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "super",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        },
+        {
+          "type": "unary_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "error_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "assert_expr",
+          "named": true
+        },
+        {
+          "type": "binary_expr",
+          "named": true
+        },
+        {
+          "type": "bindexpr",
+          "named": true
+        },
+        {
+          "type": "error_expr",
+          "named": true
+        },
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "functionapp",
+          "named": true
+        },
+        {
+          "type": "functiondef",
+          "named": true
+        },
+        {
+          "type": "id",
+          "named": true
+        },
+        {
+          "type": "if_expr",
+          "named": true
+        },
+        {
+          "type": "import",
+          "named": true
+        },
+        {
+          "type": "in_super_expr",
+          "named": true
+        },
+        {
+          "type": "index",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "objadd",
+          "named": true
+        },
+        {
+          "type": "object",
+          "named": true
+        },
+        {
+          "type": "outer",
+          "named": true
+        },
+        {
+          "type": "self",
+          "named": true
+        },
+        {
+          "type": "slice_expr",
           "named": true
         },
         {
@@ -543,7 +831,15 @@
           "named": true
         },
         {
+          "type": "functionapp",
+          "named": true
+        },
+        {
           "type": "functiondef",
+          "named": true
+        },
+        {
+          "type": "id",
           "named": true
         },
         {
@@ -584,6 +880,10 @@
         },
         {
           "type": "self",
+          "named": true
+        },
+        {
+          "type": "slice_expr",
           "named": true
         },
         {
@@ -652,6 +952,124 @@
     }
   },
   {
+    "type": "functionapp",
+    "named": true,
+    "fields": {
+      "funcname": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "assert_expr",
+            "named": true
+          },
+          {
+            "type": "binary_expr",
+            "named": true
+          },
+          {
+            "type": "bindexpr",
+            "named": true
+          },
+          {
+            "type": "error_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "functionapp",
+            "named": true
+          },
+          {
+            "type": "functiondef",
+            "named": true
+          },
+          {
+            "type": "id",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "import",
+            "named": true
+          },
+          {
+            "type": "in_super_expr",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "null",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "objadd",
+            "named": true
+          },
+          {
+            "type": "object",
+            "named": true
+          },
+          {
+            "type": "outer",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "slice_expr",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "super",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "args",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "functiondef",
     "named": true,
     "fields": {
@@ -714,7 +1132,15 @@
           "named": true
         },
         {
+          "type": "functionapp",
+          "named": true
+        },
+        {
           "type": "functiondef",
+          "named": true
+        },
+        {
+          "type": "id",
           "named": true
         },
         {
@@ -755,6 +1181,10 @@
         },
         {
           "type": "self",
+          "named": true
+        },
+        {
+          "type": "slice_expr",
           "named": true
         },
         {
@@ -824,7 +1254,15 @@
           "named": true
         },
         {
+          "type": "functionapp",
+          "named": true
+        },
+        {
           "type": "functiondef",
+          "named": true
+        },
+        {
+          "type": "id",
           "named": true
         },
         {
@@ -865,6 +1303,10 @@
         },
         {
           "type": "self",
+          "named": true
+        },
+        {
+          "type": "slice_expr",
           "named": true
         },
         {
@@ -914,7 +1356,15 @@
       "required": true,
       "types": [
         {
+          "type": "assert_expr",
+          "named": true
+        },
+        {
           "type": "field",
+          "named": true
+        },
+        {
+          "type": "objlocal",
           "named": true
         }
       ]
@@ -953,7 +1403,15 @@
           "named": true
         },
         {
+          "type": "functionapp",
+          "named": true
+        },
+        {
           "type": "functiondef",
+          "named": true
+        },
+        {
+          "type": "id",
           "named": true
         },
         {
@@ -997,6 +1455,10 @@
           "named": true
         },
         {
+          "type": "slice_expr",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -1031,6 +1493,21 @@
     }
   },
   {
+    "type": "objlocal",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bind",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "param",
     "named": true,
     "fields": {},
@@ -1044,6 +1521,420 @@
         },
         {
           "type": "id",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "slice_expr",
+    "named": true,
+    "fields": {
+      "end": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "assert_expr",
+            "named": true
+          },
+          {
+            "type": "binary_expr",
+            "named": true
+          },
+          {
+            "type": "bindexpr",
+            "named": true
+          },
+          {
+            "type": "error_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "functionapp",
+            "named": true
+          },
+          {
+            "type": "functiondef",
+            "named": true
+          },
+          {
+            "type": "id",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "import",
+            "named": true
+          },
+          {
+            "type": "in_super_expr",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "null",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "objadd",
+            "named": true
+          },
+          {
+            "type": "object",
+            "named": true
+          },
+          {
+            "type": "outer",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "slice_expr",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "super",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      },
+      "inc": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "assert_expr",
+            "named": true
+          },
+          {
+            "type": "binary_expr",
+            "named": true
+          },
+          {
+            "type": "bindexpr",
+            "named": true
+          },
+          {
+            "type": "error_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "functionapp",
+            "named": true
+          },
+          {
+            "type": "functiondef",
+            "named": true
+          },
+          {
+            "type": "id",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "import",
+            "named": true
+          },
+          {
+            "type": "in_super_expr",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "null",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "objadd",
+            "named": true
+          },
+          {
+            "type": "object",
+            "named": true
+          },
+          {
+            "type": "outer",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "slice_expr",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "super",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      },
+      "start": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "assert_expr",
+            "named": true
+          },
+          {
+            "type": "binary_expr",
+            "named": true
+          },
+          {
+            "type": "bindexpr",
+            "named": true
+          },
+          {
+            "type": "error_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "functionapp",
+            "named": true
+          },
+          {
+            "type": "functiondef",
+            "named": true
+          },
+          {
+            "type": "id",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "import",
+            "named": true
+          },
+          {
+            "type": "in_super_expr",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "null",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "objadd",
+            "named": true
+          },
+          {
+            "type": "object",
+            "named": true
+          },
+          {
+            "type": "outer",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "slice_expr",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "super",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "assert_expr",
+          "named": true
+        },
+        {
+          "type": "binary_expr",
+          "named": true
+        },
+        {
+          "type": "bindexpr",
+          "named": true
+        },
+        {
+          "type": "error_expr",
+          "named": true
+        },
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "functionapp",
+          "named": true
+        },
+        {
+          "type": "functiondef",
+          "named": true
+        },
+        {
+          "type": "id",
+          "named": true
+        },
+        {
+          "type": "if_expr",
+          "named": true
+        },
+        {
+          "type": "import",
+          "named": true
+        },
+        {
+          "type": "in_super_expr",
+          "named": true
+        },
+        {
+          "type": "index",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "objadd",
+          "named": true
+        },
+        {
+          "type": "object",
+          "named": true
+        },
+        {
+          "type": "outer",
+          "named": true
+        },
+        {
+          "type": "self",
+          "named": true
+        },
+        {
+          "type": "slice_expr",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "super",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        },
+        {
+          "type": "unary_expr",
           "named": true
         }
       ]
@@ -1112,6 +2003,10 @@
           "named": true
         },
         {
+          "type": "functionapp",
+          "named": true
+        },
+        {
           "type": "functiondef",
           "named": true
         },
@@ -1157,6 +2052,10 @@
         },
         {
           "type": "self",
+          "named": true
+        },
+        {
+          "type": "slice_expr",
           "named": true
         },
         {
@@ -1211,7 +2110,15 @@
           "named": true
         },
         {
+          "type": "functionapp",
+          "named": true
+        },
+        {
           "type": "functiondef",
+          "named": true
+        },
+        {
+          "type": "id",
           "named": true
         },
         {
@@ -1252,6 +2159,10 @@
         },
         {
           "type": "self",
+          "named": true
+        },
+        {
+          "type": "slice_expr",
           "named": true
         },
         {
@@ -1306,7 +2217,15 @@
           "named": true
         },
         {
+          "type": "functionapp",
+          "named": true
+        },
+        {
           "type": "functiondef",
+          "named": true
+        },
+        {
+          "type": "id",
           "named": true
         },
         {
@@ -1347,6 +2266,10 @@
         },
         {
           "type": "self",
+          "named": true
+        },
+        {
+          "type": "slice_expr",
           "named": true
         },
         {
