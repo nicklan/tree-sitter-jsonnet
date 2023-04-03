@@ -1,16 +1,18 @@
 const PREC = {
-  appindex: 13,
-  unary: 12,
-  mult: 11,
-  add: 10,
-  shift: 9,
-  comp: 8,
+  appindex: 14,
+  unary: 13,
+  mult: 12,
+  add: 11,
+  shift: 10,
+  comp: 9,
+  insuper: 8, // in super and "in" as a binop need different prec
   compeq: 7,
   bitand: 6,
   bitxor: 5,
   bitor: 4,
   and: 3,
   or: 2,
+  keyword: 1,
 }
 
 module.exports = grammar({
@@ -27,9 +29,11 @@ module.exports = grammar({
       $.false,
       $.self,
       $.outer,
+      $.super,
       $.string,
       $.number,
       $.object,
+      $.objadd,
       $.array,
       $.bindexpr,
       $.import,
@@ -37,6 +41,10 @@ module.exports = grammar({
       $.index,
       $.unary_expr,
       $.binary_expr,
+      $.if_expr,
+      $.error_expr,
+      $.in_super_expr,
+      $.assert_expr,
     ),
 
     null: $ => "null",
@@ -44,6 +52,11 @@ module.exports = grammar({
     false: $ => "false",
     self: $ => "self",
     outer: $ => "$",
+
+    super: $ => choice(
+      seq("super", ".", $.id),
+      seq("super", "[", $._expr, "]")
+    ),
 
     id: $ => /[_a-zA-Z][_a-zA-Z0-9]*/,
 
@@ -88,6 +101,8 @@ module.exports = grammar({
     hsep: $ => /:{1,3}/,
 
     value: $ => $._expr,
+
+    objadd: $ => prec.left(PREC.add, seq($._expr, $.object)),
 
     array: $ => seq("[", optTrailingCommaSep($.expr), "]"),
 
@@ -142,7 +157,18 @@ module.exports = grammar({
         field('op', op),
         field('right', $._expr)
       ))));
-    }
+    },
+
+    if_expr: $ => prec.left(
+      PREC.keyword,
+      seq('if', $._expr, 'then', $._expr, optional(seq('else', $._expr)))
+    ),
+
+    error_expr: $ => prec.left(PREC.keyword, seq("error", $._expr)),
+
+    in_super_expr: $ => prec.left(PREC.insuper, seq($._expr, "in", "super")),
+
+    assert_expr: $ => prec.left(PREC.keyword, seq("assert", $._expr, optional(seq(":", $._expr)))),
   }
 });
 

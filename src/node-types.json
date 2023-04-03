@@ -15,6 +15,101 @@
     }
   },
   {
+    "type": "assert_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "assert_expr",
+          "named": true
+        },
+        {
+          "type": "binary_expr",
+          "named": true
+        },
+        {
+          "type": "bindexpr",
+          "named": true
+        },
+        {
+          "type": "error_expr",
+          "named": true
+        },
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "functiondef",
+          "named": true
+        },
+        {
+          "type": "if_expr",
+          "named": true
+        },
+        {
+          "type": "import",
+          "named": true
+        },
+        {
+          "type": "in_super_expr",
+          "named": true
+        },
+        {
+          "type": "index",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "objadd",
+          "named": true
+        },
+        {
+          "type": "object",
+          "named": true
+        },
+        {
+          "type": "outer",
+          "named": true
+        },
+        {
+          "type": "self",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "super",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        },
+        {
+          "type": "unary_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "binary_expr",
     "named": true,
     "fields": {
@@ -27,11 +122,19 @@
             "named": true
           },
           {
+            "type": "assert_expr",
+            "named": true
+          },
+          {
             "type": "binary_expr",
             "named": true
           },
           {
             "type": "bindexpr",
+            "named": true
+          },
+          {
+            "type": "error_expr",
             "named": true
           },
           {
@@ -43,7 +146,15 @@
             "named": true
           },
           {
+            "type": "if_expr",
+            "named": true
+          },
+          {
             "type": "import",
+            "named": true
+          },
+          {
+            "type": "in_super_expr",
             "named": true
           },
           {
@@ -56,6 +167,10 @@
           },
           {
             "type": "number",
+            "named": true
+          },
+          {
+            "type": "objadd",
             "named": true
           },
           {
@@ -72,6 +187,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "super",
             "named": true
           },
           {
@@ -175,11 +294,19 @@
             "named": true
           },
           {
+            "type": "assert_expr",
+            "named": true
+          },
+          {
             "type": "binary_expr",
             "named": true
           },
           {
             "type": "bindexpr",
+            "named": true
+          },
+          {
+            "type": "error_expr",
             "named": true
           },
           {
@@ -191,7 +318,15 @@
             "named": true
           },
           {
+            "type": "if_expr",
+            "named": true
+          },
+          {
             "type": "import",
+            "named": true
+          },
+          {
+            "type": "in_super_expr",
             "named": true
           },
           {
@@ -204,6 +339,10 @@
           },
           {
             "type": "number",
+            "named": true
+          },
+          {
+            "type": "objadd",
             "named": true
           },
           {
@@ -220,6 +359,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "super",
             "named": true
           },
           {
@@ -273,7 +416,7 @@
     }
   },
   {
-    "type": "expr",
+    "type": "error_expr",
     "named": true,
     "fields": {},
     "children": {
@@ -285,11 +428,19 @@
           "named": true
         },
         {
+          "type": "assert_expr",
+          "named": true
+        },
+        {
           "type": "binary_expr",
           "named": true
         },
         {
           "type": "bindexpr",
+          "named": true
+        },
+        {
+          "type": "error_expr",
           "named": true
         },
         {
@@ -301,7 +452,15 @@
           "named": true
         },
         {
+          "type": "if_expr",
+          "named": true
+        },
+        {
           "type": "import",
+          "named": true
+        },
+        {
+          "type": "in_super_expr",
           "named": true
         },
         {
@@ -314,6 +473,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "objadd",
           "named": true
         },
         {
@@ -330,6 +493,105 @@
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "super",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        },
+        {
+          "type": "unary_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "assert_expr",
+          "named": true
+        },
+        {
+          "type": "binary_expr",
+          "named": true
+        },
+        {
+          "type": "bindexpr",
+          "named": true
+        },
+        {
+          "type": "error_expr",
+          "named": true
+        },
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "functiondef",
+          "named": true
+        },
+        {
+          "type": "if_expr",
+          "named": true
+        },
+        {
+          "type": "import",
+          "named": true
+        },
+        {
+          "type": "in_super_expr",
+          "named": true
+        },
+        {
+          "type": "index",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "objadd",
+          "named": true
+        },
+        {
+          "type": "object",
+          "named": true
+        },
+        {
+          "type": "outer",
+          "named": true
+        },
+        {
+          "type": "self",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "super",
           "named": true
         },
         {
@@ -420,6 +682,101 @@
     }
   },
   {
+    "type": "if_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "assert_expr",
+          "named": true
+        },
+        {
+          "type": "binary_expr",
+          "named": true
+        },
+        {
+          "type": "bindexpr",
+          "named": true
+        },
+        {
+          "type": "error_expr",
+          "named": true
+        },
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "functiondef",
+          "named": true
+        },
+        {
+          "type": "if_expr",
+          "named": true
+        },
+        {
+          "type": "import",
+          "named": true
+        },
+        {
+          "type": "in_super_expr",
+          "named": true
+        },
+        {
+          "type": "index",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "objadd",
+          "named": true
+        },
+        {
+          "type": "object",
+          "named": true
+        },
+        {
+          "type": "outer",
+          "named": true
+        },
+        {
+          "type": "self",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "super",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        },
+        {
+          "type": "unary_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "import",
     "named": true,
     "fields": {},
@@ -429,6 +786,101 @@
       "types": [
         {
           "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "in_super_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "assert_expr",
+          "named": true
+        },
+        {
+          "type": "binary_expr",
+          "named": true
+        },
+        {
+          "type": "bindexpr",
+          "named": true
+        },
+        {
+          "type": "error_expr",
+          "named": true
+        },
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "functiondef",
+          "named": true
+        },
+        {
+          "type": "if_expr",
+          "named": true
+        },
+        {
+          "type": "import",
+          "named": true
+        },
+        {
+          "type": "in_super_expr",
+          "named": true
+        },
+        {
+          "type": "index",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "objadd",
+          "named": true
+        },
+        {
+          "type": "object",
+          "named": true
+        },
+        {
+          "type": "outer",
+          "named": true
+        },
+        {
+          "type": "self",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "super",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        },
+        {
+          "type": "unary_expr",
           "named": true
         }
       ]
@@ -463,6 +915,101 @@
       "types": [
         {
           "type": "field",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "objadd",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "assert_expr",
+          "named": true
+        },
+        {
+          "type": "binary_expr",
+          "named": true
+        },
+        {
+          "type": "bindexpr",
+          "named": true
+        },
+        {
+          "type": "error_expr",
+          "named": true
+        },
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "functiondef",
+          "named": true
+        },
+        {
+          "type": "if_expr",
+          "named": true
+        },
+        {
+          "type": "import",
+          "named": true
+        },
+        {
+          "type": "in_super_expr",
+          "named": true
+        },
+        {
+          "type": "index",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "objadd",
+          "named": true
+        },
+        {
+          "type": "object",
+          "named": true
+        },
+        {
+          "type": "outer",
+          "named": true
+        },
+        {
+          "type": "self",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "super",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        },
+        {
+          "type": "unary_expr",
           "named": true
         }
       ]
@@ -533,7 +1080,7 @@
     }
   },
   {
-    "type": "unary_expr",
+    "type": "super",
     "named": true,
     "fields": {},
     "children": {
@@ -545,11 +1092,19 @@
           "named": true
         },
         {
+          "type": "assert_expr",
+          "named": true
+        },
+        {
           "type": "binary_expr",
           "named": true
         },
         {
           "type": "bindexpr",
+          "named": true
+        },
+        {
+          "type": "error_expr",
           "named": true
         },
         {
@@ -561,7 +1116,19 @@
           "named": true
         },
         {
+          "type": "id",
+          "named": true
+        },
+        {
+          "type": "if_expr",
+          "named": true
+        },
+        {
           "type": "import",
+          "named": true
+        },
+        {
+          "type": "in_super_expr",
           "named": true
         },
         {
@@ -574,6 +1141,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "objadd",
           "named": true
         },
         {
@@ -590,6 +1161,105 @@
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "super",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        },
+        {
+          "type": "unary_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unary_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "assert_expr",
+          "named": true
+        },
+        {
+          "type": "binary_expr",
+          "named": true
+        },
+        {
+          "type": "bindexpr",
+          "named": true
+        },
+        {
+          "type": "error_expr",
+          "named": true
+        },
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "functiondef",
+          "named": true
+        },
+        {
+          "type": "if_expr",
+          "named": true
+        },
+        {
+          "type": "import",
+          "named": true
+        },
+        {
+          "type": "in_super_expr",
+          "named": true
+        },
+        {
+          "type": "index",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "objadd",
+          "named": true
+        },
+        {
+          "type": "object",
+          "named": true
+        },
+        {
+          "type": "outer",
+          "named": true
+        },
+        {
+          "type": "self",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "super",
           "named": true
         },
         {
@@ -616,11 +1286,19 @@
           "named": true
         },
         {
+          "type": "assert_expr",
+          "named": true
+        },
+        {
           "type": "binary_expr",
           "named": true
         },
         {
           "type": "bindexpr",
+          "named": true
+        },
+        {
+          "type": "error_expr",
           "named": true
         },
         {
@@ -632,7 +1310,15 @@
           "named": true
         },
         {
+          "type": "if_expr",
+          "named": true
+        },
+        {
           "type": "import",
+          "named": true
+        },
+        {
+          "type": "in_super_expr",
           "named": true
         },
         {
@@ -645,6 +1331,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "objadd",
           "named": true
         },
         {
@@ -661,6 +1351,10 @@
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "super",
           "named": true
         },
         {
@@ -731,6 +1425,10 @@
     "named": false
   },
   {
+    "type": ":",
+    "named": false
+  },
+  {
     "type": ";",
     "named": false
   },
@@ -779,6 +1477,18 @@
     "named": false
   },
   {
+    "type": "assert",
+    "named": false
+  },
+  {
+    "type": "else",
+    "named": false
+  },
+  {
+    "type": "error",
+    "named": false
+  },
+  {
     "type": "escape_sequence",
     "named": true
   },
@@ -797,6 +1507,10 @@
   {
     "type": "id",
     "named": true
+  },
+  {
+    "type": "if",
+    "named": false
   },
   {
     "type": "import",
@@ -833,6 +1547,14 @@
   {
     "type": "self",
     "named": true
+  },
+  {
+    "type": "super",
+    "named": false
+  },
+  {
+    "type": "then",
+    "named": false
   },
   {
     "type": "true",
