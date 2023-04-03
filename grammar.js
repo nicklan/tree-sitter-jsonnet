@@ -13,12 +13,12 @@ const PREC = {
   and: 3,
   or: 2,
   keyword: 1,
-}
+};
 
 module.exports = grammar({
   name: 'jsonnet',
 
-  extras: $ => [/\s/, $.line_comment],
+  extras: $ => [/\s/, $.line_comment, $.block_comment],
 
   conflicts: $ => [
     [$.expr, $.comparray],
@@ -85,13 +85,14 @@ module.exports = grammar({
       /(\"|\\|\/|b|f|n|r|t|u)/
     )),
 
-    comment: $ => choice(
-      $.line_comment,
-      //$.block_comment,
-    ),
-
     line_comment: $ => token(seq(
       choice('//', '#'), /.*/
+    )),
+
+    block_comment: $ => token(seq(
+      '/*',
+        /[^*]*\*+([^/*][^*]*\*+)*/,
+      '/'
     )),
 
     number: $ => token(seq(
@@ -134,11 +135,11 @@ module.exports = grammar({
       "[",
       field('start', $._expr),
       optional(
-        seq(":", field('end', $._expr),
-            optional(
-              seq(":", field('inc', $._expr))
-            )
-           )
+        seq(
+          ":",
+          field('end', $._expr),
+          optional(seq(":", field('inc', $._expr)))
+        )
       ),
       "]"
     )),

@@ -1,0 +1,53 @@
+========
+comments
+========
+
+/*
+
+foo
+
+*/
+
+# line
+
+/* foo *** **/
+
+
+{
+  a: 2, /*
+odd
+block
+*/ b: 3,
+} /* block # */
+
+// line
+/* block  here
+ here
+***/
+
+---
+
+(source_file
+  (block_comment)
+  (line_comment)
+  (block_comment)
+  (expr
+    (object
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (number))))
+      (block_comment)
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (number))))))
+  (block_comment)
+  (line_comment)
+  (block_comment))
