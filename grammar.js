@@ -95,7 +95,12 @@ module.exports = grammar({
     objlocal: $ => seq("local", $.bind),
 
     // need to add '+' and the (params) forms
-    field: $ => seq($.fieldname, $.hsep, $.value),
+    field: $ => seq(
+      $.fieldname,
+      optional('+'),
+      $.hsep,
+      $.value
+    ),
 
     fieldname: $ => choice(
       $.string,
