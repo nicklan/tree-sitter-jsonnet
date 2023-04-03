@@ -18,6 +18,8 @@ const PREC = {
 module.exports = grammar({
   name: 'jsonnet',
 
+  extras: $ => [/\s/, $.line_comment],
+
   conflicts: $ => [
     [$.expr, $.comparray],
   ],
@@ -81,6 +83,15 @@ module.exports = grammar({
     escape_sequence: $ => token.immediate(seq(
       '\\',
       /(\"|\\|\/|b|f|n|r|t|u)/
+    )),
+
+    comment: $ => choice(
+      $.line_comment,
+      //$.block_comment,
+    ),
+
+    line_comment: $ => token(seq(
+      choice('//', '#'), /.*/
     )),
 
     number: $ => token(seq(

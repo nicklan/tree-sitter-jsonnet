@@ -1,0 +1,28 @@
+=============
+line comments
+=============
+
+// top comment
+[ # here
+  1, // here 3
+  2,   # also
+] // something
+// hah
+# here
+
+---
+
+(source_file
+  (line_comment)
+  (expr
+    (array
+      (line_comment)
+      (expr
+        (number))
+      (line_comment)
+      (expr
+        (number))
+      (line_comment)))
+  (line_comment)
+  (line_comment)
+  (line_comment))
