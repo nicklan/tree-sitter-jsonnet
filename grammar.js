@@ -20,6 +20,10 @@ module.exports = grammar({
 
   extras: $ => [/\s/, $.line_comment, $.block_comment],
 
+  externals: $ => [
+    $.block_string,
+  ],
+
   conflicts: $ => [
     [$.expr, $.comparray],
   ],
@@ -74,6 +78,7 @@ module.exports = grammar({
       const startdbl = choice('"', '@"');
       const startsngl = choice("'", "@'");
       return choice(
+        seq('|||', $.block_string),
         seq(startdbl, optional($._string_inner_dbl), '"'),
         seq(startsngl, optional($._string_inner_sngl), "'"),
       );
@@ -247,9 +252,9 @@ module.exports = grammar({
         [PREC.compeq, choice('==', '!=')],
         [PREC.bitand, '&'],
         [PREC.bitxor, '^'],
-        [PREC.bitor, '|'],
+        //[PREC.bitor, '|'],
         [PREC.and, '&&'],
-        [PREC.or, '||'],
+        //[PREC.or, '||'],
       ];
 
       return choice(...table.map(([precedence, op]) => prec.left(precedence, seq(

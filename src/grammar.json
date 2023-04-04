@@ -188,6 +188,19 @@
           "type": "SEQ",
           "members": [
             {
+              "type": "STRING",
+              "value": "|||"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "block_string"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
               "type": "CHOICE",
               "members": [
                 {
@@ -1709,39 +1722,6 @@
         },
         {
           "type": "PREC_LEFT",
-          "value": 4,
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "FIELD",
-                "name": "left",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "_expr"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "op",
-                "content": {
-                  "type": "STRING",
-                  "value": "|"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "right",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "_expr"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "PREC_LEFT",
           "value": 3,
           "content": {
             "type": "SEQ",
@@ -1760,39 +1740,6 @@
                 "content": {
                   "type": "STRING",
                   "value": "&&"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "right",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "_expr"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "PREC_LEFT",
-          "value": 2,
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "FIELD",
-                "name": "left",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "_expr"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "op",
-                "content": {
-                  "type": "STRING",
-                  "value": "||"
                 }
               },
               {
@@ -1952,7 +1899,12 @@
     ]
   ],
   "precedences": [],
-  "externals": [],
+  "externals": [
+    {
+      "type": "SYMBOL",
+      "name": "block_string"
+    }
+  ],
   "inline": [],
   "supertypes": []
 }

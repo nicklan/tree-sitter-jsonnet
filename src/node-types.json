@@ -428,14 +428,6 @@
           {
             "type": "in",
             "named": false
-          },
-          {
-            "type": "|",
-            "named": false
-          },
-          {
-            "type": "||",
-            "named": false
           }
         ]
       },
@@ -2384,6 +2376,10 @@
       "required": false,
       "types": [
         {
+          "type": "block_string",
+          "named": true
+        },
+        {
           "type": "escaped_char",
           "named": true
         },
@@ -2856,6 +2852,10 @@
     "named": true
   },
   {
+    "type": "block_string",
+    "named": true
+  },
+  {
     "type": "else",
     "named": false
   },
@@ -2952,11 +2952,7 @@
     "named": false
   },
   {
-    "type": "|",
-    "named": false
-  },
-  {
-    "type": "||",
+    "type": "|||",
     "named": false
   },
   {
