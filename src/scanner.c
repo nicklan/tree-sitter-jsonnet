@@ -6,6 +6,9 @@ enum TokenType {
   BLOCK_STRING,
 };
 
+// we need a limit on how much space we will allocate to store leading space
+static size_t MAX_LEADING_SPACE = 4096;
+
 void *tree_sitter_jsonnet_external_scanner_create() { return NULL; }
 void tree_sitter_jsonnet_external_scanner_destroy(void *p) {}
 void tree_sitter_jsonnet_external_scanner_reset(void *p) {}
@@ -29,13 +32,17 @@ static bool skip_to_next_line(TSLexer *lexer) {
   return true;
 }
 
-static unsigned count_spaces(TSLexer *lexer) {
-  unsigned count = 0;
-  while (is_space_not_newline(lexer->lookahead)) {
-    lexer->advance(lexer, false);
-    count++;
+static bool line_starts_with(int32_t* leading, TSLexer *lexer) {
+  size_t pos = 0;
+  while(leading[pos] != '\0') {
+    if (leading[pos] != lexer->lookahead) {
+      return false;
+    } else {
+      lexer->advance(lexer, false);
+      pos++;
+    }
   }
-  return count;
+  return true;
 }
 
 static unsigned bar_count(TSLexer *lexer) {
@@ -60,27 +67,70 @@ bool tree_sitter_jsonnet_external_scanner_scan(void *payload, TSLexer *lexer,
     }
     lexer->advance(lexer, true);
 
-    unsigned W_len = 0;
-    while (iswspace(lexer->lookahead)) {
-      if (lexer->lookahead == '\n') {
-        // newline, reset W_len
-        W_len = 0;
-        lexer->advance(lexer, false);
-      } else {
-        W_len++;
-        lexer->advance(lexer, false);
-      }
+    // we need to skip any truely empty lines (i.e. just \n)
+    while(lexer->lookahead == '\n') {
+      lexer->advance(lexer, false);
     }
-    // now W_len holds our space indent
+
+    // now we have a line that isn't just newlines, so now store the leading indent
+    size_t cur_w_space = 32;
+    unsigned cur_w_pos = 0;
+    int32_t* leading_whitespace = malloc(sizeof(int32_t) * cur_w_space);
+
+    while (is_space_not_newline(lexer->lookahead)) {
+      if ((cur_w_pos+1) >= cur_w_space) {
+        if (cur_w_space < MAX_LEADING_SPACE) {
+          int32_t* new_leading_whitespace = realloc(
+            leading_whitespace,
+            sizeof(int32_t) * cur_w_space * 2);
+          if (new_leading_whitespace == NULL) {
+            free(leading_whitespace);
+            return false;
+          } else {
+            leading_whitespace = new_leading_whitespace;
+          }
+          cur_w_space *= 2;
+        } else {
+          // not enough space, must be a very odd file
+          free(leading_whitespace);
+          return false;
+        }
+      }
+      leading_whitespace[cur_w_pos++] = lexer->lookahead;
+      lexer->advance(lexer, false);
+    }
+
+    // advance past the \n
+    if (!skip_to_next_line(lexer)) {
+      // must have hit eof
+      free(leading_whitespace);
+      return false;
+    }
+
+    // now leading_whitespace holds whatever we have to match to "keep going"
+    leading_whitespace[cur_w_pos] = '\0'; // null term it so we can compare later
 
     for (;;) {
-      if (!skip_to_next_line(lexer)) {
-        return false;
+      // skip over fully blank lines
+      if (lexer->lookahead == '\n') {
+        lexer->advance(lexer, false);
+        continue;
       }
-      // at start of next line, check if we have W spaces
-      unsigned leading = count_spaces(lexer);
-      if (leading != W_len) {
-        // we've skipped spaces not equal to the block indent, so now it HAS to end with |||
+
+      // at start of a line, check if we have W spaces
+      if (line_starts_with(leading_whitespace, lexer)) {
+        // line is 'in' the string, scan forward to start of next line
+        if (!skip_to_next_line(lexer)) {
+          free(leading_whitespace);
+          return false;
+        }
+      } else {
+        // we've got space not equal to the block indent, so now it HAS to end with |||
+        // strip optional whitespace
+        while(is_space_not_newline(lexer->lookahead)) {
+          lexer->advance(lexer, false);
+        }
+        free(leading_whitespace);
         if (bar_count(lexer) == 3) {
           lexer->result_symbol = BLOCK_STRING;
           return true;

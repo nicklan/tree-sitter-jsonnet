@@ -1,17 +1,65 @@
 =========
 odd block
 =========
-
+[
 |||
   
    test
    |||,
    ||| x
+|||,
 |||
+  test
+
+
+|||,
+|||
+  
+   test
+  |||,
+   ||| x
+|||, // now mix tab and space
+|||
+ 	 space tab space
+ 	 2
+ 	 3
+ 	|||,
+|||
+		tab
+		tab2
+  |||,
+|||
+                                                                                                                                x
+                                                                                                                                x
+                                                                                                                               |||,
+|||
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                y
+|||
+]
 
 ---
-
 (source_file
   (expr
-    (string
-      (block_string))))
+    (array
+      (expr
+        (string
+          (block_string)))
+      (expr
+        (string
+          (block_string)))
+      (expr
+        (string
+          (block_string)))
+      (line_comment)
+      (expr
+        (string
+          (block_string)))
+      (expr
+        (string
+          (block_string)))
+      (expr
+        (string
+          (block_string)))
+      (expr
+        (string
+          (block_string))))))

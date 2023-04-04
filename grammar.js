@@ -1,4 +1,5 @@
 const PREC = {
+  paren: 15,
   appindex: 14,
   unary: 13,
   mult: 12,
@@ -73,6 +74,8 @@ module.exports = grammar({
     ),
 
     id: $ => /[_a-zA-Z][_a-zA-Z0-9]*/,
+
+    paren: $ => prec.left(PREC.paren, seq('(', $._expr, ')')),
 
     string: $ => {
       const startdbl = choice('"', '@"');
