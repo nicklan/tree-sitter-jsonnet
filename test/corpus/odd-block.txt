@@ -1,0 +1,17 @@
+=========
+odd block
+=========
+
+|||
+  
+   test
+   |||,
+   ||| x
+|||
+
+---
+
+(source_file
+  (expr
+    (string
+      (block_string))))

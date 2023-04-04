@@ -428,6 +428,14 @@
           {
             "type": "in",
             "named": false
+          },
+          {
+            "type": "|",
+            "named": false
+          },
+          {
+            "type": "||",
+            "named": false
           }
         ]
       },
@@ -2949,6 +2957,14 @@
   },
   {
     "type": "{",
+    "named": false
+  },
+  {
+    "type": "|",
+    "named": false
+  },
+  {
+    "type": "||",
     "named": false
   },
   {

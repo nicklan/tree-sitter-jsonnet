@@ -252,9 +252,9 @@ module.exports = grammar({
         [PREC.compeq, choice('==', '!=')],
         [PREC.bitand, '&'],
         [PREC.bitxor, '^'],
-        //[PREC.bitor, '|'],
+        [PREC.bitor, '|'],
         [PREC.and, '&&'],
-        //[PREC.or, '||'],
+        [PREC.or, '||'],
       ];
 
       return choice(...table.map(([precedence, op]) => prec.left(precedence, seq(
