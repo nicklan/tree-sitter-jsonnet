@@ -2384,7 +2384,11 @@
       "required": false,
       "types": [
         {
-          "type": "escape_sequence",
+          "type": "escaped_char",
+          "named": true
+        },
+        {
+          "type": "unicode_escape",
           "named": true
         }
       ]
@@ -2748,6 +2752,10 @@
     "named": false
   },
   {
+    "type": "'",
+    "named": false
+  },
+  {
     "type": "(",
     "named": false
   },
@@ -2820,6 +2828,14 @@
     "named": false
   },
   {
+    "type": "@\"",
+    "named": false
+  },
+  {
+    "type": "@'",
+    "named": false
+  },
+  {
     "type": "[",
     "named": false
   },
@@ -2848,7 +2864,7 @@
     "named": false
   },
   {
-    "type": "escape_sequence",
+    "type": "escaped_char",
     "named": true
   },
   {
@@ -2925,6 +2941,10 @@
   },
   {
     "type": "true",
+    "named": true
+  },
+  {
+    "type": "unicode_escape",
     "named": true
   },
   {

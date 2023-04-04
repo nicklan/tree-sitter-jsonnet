@@ -1,0 +1,123 @@
+=======
+strings
+=======
+
+{
+  ed: "",
+  es: '',
+  d: "foo\"is",
+  s: 'foo\'is',
+  ds: "foo'is",
+  sd: 'foo"is',
+  vd: @"blah",
+  vs: @'blah',
+  vde: @"",
+  vse: @'',
+  dmult: "one
+two",
+  smult: 'one
+  two
+     three',
+  u1: "\u01234\u83Fa",
+}
+
+---
+
+(source_file
+  (expr
+    (object
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (string))))
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (string))))
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (string
+              (escaped_char)))))
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (string
+              (escaped_char)))))
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (string))))
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (string))))
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (string))))
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (string))))
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (string))))
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (string))))
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (string))))
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (string))))
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (string
+              (unicode_escape)
+              (unicode_escape))))))))

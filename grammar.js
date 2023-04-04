@@ -70,19 +70,37 @@ module.exports = grammar({
 
     id: $ => /[_a-zA-Z][_a-zA-Z0-9]*/,
 
-    string: $ => choice(
-      seq('"', '"'),
-      seq('"', $._string_inner, '"')
-    ),
+    string: $ => {
+      const startdbl = choice('"', '@"');
+      const startsngl = choice("'", "@'");
+      return choice(
+        seq(startdbl, optional($._string_inner_dbl), '"'),
+        seq(startsngl, optional($._string_inner_sngl), "'"),
+      );
+    },
 
-    _string_inner: $ => repeat1(choice(
-      token.immediate(prec(1, /[^\\"\n]+/)),
-      $.escape_sequence
+    _string_inner_dbl: $ => repeat1(choice(
+      token.immediate(prec(1, /[^\\"]+/)),
+      $._escaped
     )),
 
-    escape_sequence: $ => token.immediate(seq(
+    _string_inner_sngl: $ => repeat1(choice(
+      token.immediate(prec(1, /[^\\']+/)),
+      $._escaped
+    )),
+
+    _escaped: $ => choice(
+      $.escaped_char,
+      $.unicode_escape,
+    ),
+
+    escaped_char: $ => token.immediate(seq(
       '\\',
-      /(\"|\\|\/|b|f|n|r|t|u)/
+      /(\"|\'|\\|\/|b|f|n|r|t)/
+    )),
+
+    unicode_escape: $ => token.immediate(seq(
+      '\\u', /[0-9,a-f,A-F]{4}/
     )),
 
     line_comment: $ => token(seq(
