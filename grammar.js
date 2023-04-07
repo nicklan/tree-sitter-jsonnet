@@ -210,10 +210,10 @@ module.exports = grammar({
       "]",
     ),
 
-    compspec: $ => choice(
+    compspec: $ => repeat1(choice(
       $.forspec,
       $.ifspec
-    ),
+    )),
 
     forspec: $ => seq("for", $._forspec_rest),
     _forspec_rest: $ => seq($.id, "in", $._expr),

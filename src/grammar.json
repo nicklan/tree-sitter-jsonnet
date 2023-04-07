@@ -1033,17 +1033,20 @@
       ]
     },
     "compspec": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "forspec"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "ifspec"
-        }
-      ]
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "forspec"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "ifspec"
+          }
+        ]
+      }
     },
     "forspec": {
       "type": "SEQ",
