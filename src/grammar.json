@@ -2005,7 +2005,7 @@
       ]
     },
     "if_expr": {
-      "type": "PREC_LEFT",
+      "type": "PREC_RIGHT",
       "value": 1,
       "content": {
         "type": "SEQ",
@@ -2015,16 +2015,24 @@
             "value": "if"
           },
           {
-            "type": "SYMBOL",
-            "name": "_expr"
+            "type": "FIELD",
+            "name": "condition_expr",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expr"
+            }
           },
           {
             "type": "STRING",
             "value": "then"
           },
           {
-            "type": "SYMBOL",
-            "name": "_expr"
+            "type": "FIELD",
+            "name": "true_expr",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expr"
+            }
           },
           {
             "type": "CHOICE",
@@ -2037,8 +2045,12 @@
                     "value": "else"
                   },
                   {
-                    "type": "SYMBOL",
-                    "name": "_expr"
+                    "type": "FIELD",
+                    "name": "else_expr",
+                    "content": {
+                      "type": "SYMBOL",
+                      "name": "_expr"
+                    }
                   }
                 ]
               },

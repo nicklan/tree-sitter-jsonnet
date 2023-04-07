@@ -1,0 +1,22 @@
+=========
+nested if
+=========
+
+if true then
+  if true then
+    true
+  else
+    1
+else
+  false
+
+---
+(source_file
+  (expr
+    (if_expr
+      (true)
+      (if_expr
+        (true)
+        (true)
+        (number))
+      (false))))

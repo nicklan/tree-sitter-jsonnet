@@ -293,9 +293,20 @@ module.exports = grammar({
       ))));
     },
 
-    if_expr: $ => prec.left(
+    if_expr: $ => prec.right(
       PREC.keyword,
-      seq('if', $._expr, 'then', $._expr, optional(seq('else', $._expr)))
+      seq(
+        'if',
+        field('condition_expr', $._expr),
+        'then',
+        field('true_expr', $._expr),
+        optional(
+          seq(
+            'else',
+            field('else_expr', $._expr),
+          )
+        )
+      )
     ),
 
     error_expr: $ => prec.left(PREC.keyword, seq("error", $._expr)),
