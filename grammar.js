@@ -145,13 +145,23 @@ module.exports = grammar({
 
     objlocal: $ => seq("local", $.bind),
 
-    field: $ => prec.left(seq(
-      $.fieldname,
-      optional('+'),
-      $.hsep,
-      $.value,
-      optional($.comprehension_tail),
-    )),
+    field: $ => choice(
+      prec.left(seq(
+        $.fieldname,
+        optional('+'),
+        $.hsep,
+        $.value,
+        optional($.comprehension_tail),
+      )),
+      seq(
+        $.fieldname,
+        "(",
+        optTrailingCommaSep($.param),
+        ")",
+        $.hsep,
+        $.value
+      )
+    ),
 
     fieldname: $ => choice(
       $.string,
@@ -179,7 +189,7 @@ module.exports = grammar({
       optional(
         seq(
           ":",
-          field('end', $._expr),
+          optional(field('end', $._expr)),
           optional(seq(":", field('inc', $._expr)))
         )
       ),

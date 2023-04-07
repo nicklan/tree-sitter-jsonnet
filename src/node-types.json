@@ -1372,6 +1372,10 @@
           "named": true
         },
         {
+          "type": "param",
+          "named": true
+        },
+        {
           "type": "value",
           "named": true
         }
