@@ -1,0 +1,73 @@
+================================
+computed field and comprehension
+================================
+
+[
+  {
+    ["x" + "y"] : 3,
+  },
+  {
+    [x]: "y" for x in ["k1", "k2"]
+  },
+  {
+    local v = 1,
+    [x]: v for x in ["k1", "k2"]
+  }
+]
+
+---
+
+(source_file
+  (expr
+    (array
+      (expr
+        (object
+          (member
+            (field
+              (fieldname
+                (binary_expr
+                  (string)
+                  (string)))
+              (hsep)
+              (value
+                (number))))))
+      (expr
+        (object
+          (member
+            (field
+              (fieldname
+                (id))
+              (hsep)
+              (value
+                (string))
+              (comprehension_tail
+                (forspec
+                  (id)
+                  (array
+                    (expr
+                      (string))
+                    (expr
+                      (string)))))))))
+      (expr
+        (object
+          (member
+            (objlocal
+              (bind
+                (id)
+                (expr
+                  (number)))))
+          (member
+            (field
+              (fieldname
+                (id))
+              (hsep)
+              (value
+                (id))
+              (comprehension_tail
+                (forspec
+                  (id)
+                  (array
+                    (expr
+                      (string))
+                    (expr
+                      (string))))))))))))

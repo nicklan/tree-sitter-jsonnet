@@ -60,6 +60,7 @@ module.exports = grammar({
       $.error_expr,
       $.in_super_expr,
       $.assert_expr,
+      $.paren,
     ),
 
     null: $ => "null",
@@ -127,7 +128,14 @@ module.exports = grammar({
       optional(seq(/[eE]/, optional(/[-+]/), /\d+/))
     )),
 
-    object: $ => seq("{", optTrailingCommaSep($.member), "}"),
+    object: $ => choice(
+      seq("{", "}"),
+      seq(
+        "{",
+        trailingCommaSep($.member),
+        "}"
+      ),
+    ),
 
     member: $ => choice(
       $.objlocal,
@@ -137,22 +145,30 @@ module.exports = grammar({
 
     objlocal: $ => seq("local", $.bind),
 
-    field: $ => seq(
+    field: $ => prec.left(seq(
       $.fieldname,
       optional('+'),
       $.hsep,
-      $.value
-    ),
+      $.value,
+      optional($.comprehension_tail),
+    )),
 
     fieldname: $ => choice(
       $.string,
       $.id,
-      seq("[", $.expr, "]"),
+      seq("[", $._expr, "]"),
     ),
 
     hsep: $ => /:{1,3}/,
 
     value: $ => $._expr,
+
+    comprehension_tail: $ => seq(
+      repeat(seq(",", $.objlocal)),
+      optional(','),
+      $.forspec,
+      optional($.compspec),
+    ),
 
     objadd: $ => prec.left(PREC.add, seq($._expr, $.object)),
 
@@ -237,7 +253,7 @@ module.exports = grammar({
 
     param: $ => seq($.id, optional(seq("=", $.expr))),
 
-    index: $ => prec(PREC.appindex, seq($.expr, ".", $.id)),
+    index: $ => prec.left(PREC.appindex, seq($._expr, ".", $.id)),
 
     unary_expr: $ => prec(PREC.unary, choice(
       seq('+', $._expr),
@@ -276,7 +292,14 @@ module.exports = grammar({
 
     in_super_expr: $ => prec.left(PREC.insuper, seq($._expr, "in", "super")),
 
-    assert_expr: $ => prec.left(PREC.keyword, seq("assert", $._expr, optional(seq(":", $._expr)))),
+    assert_expr: $ => prec.left(
+      PREC.keyword,
+      seq("assert",
+          field('assertion', $._expr),
+          optional(field('message', seq(":", $._expr))),
+          ';',
+          $._expr)
+    ),
   }
 });
 
