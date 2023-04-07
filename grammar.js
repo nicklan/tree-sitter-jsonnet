@@ -175,8 +175,11 @@ module.exports = grammar({
 
     comprehension_tail: $ => seq(
       repeat(seq(",", $.objlocal)),
-      optional(','),
-      $.forspec,
+      choice(
+        'for',
+        token(prec(1, /,\s*for\s/)) // ', for' should have precedence over ', $.field'
+      ),
+      $._forspec_rest,
       optional($.compspec),
     ),
 
@@ -212,7 +215,8 @@ module.exports = grammar({
       $.ifspec
     ),
 
-    forspec: $ => seq("for", $.id, "in", $._expr),
+    forspec: $ => seq("for", $._forspec_rest),
+    _forspec_rest: $ => seq($.id, "in", $._expr),
 
     ifspec: $ => seq("if", $._expr),
 

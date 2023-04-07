@@ -982,15 +982,115 @@
       "required": true,
       "types": [
         {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "assert_expr",
+          "named": true
+        },
+        {
+          "type": "binary_expr",
+          "named": true
+        },
+        {
+          "type": "bindexpr",
+          "named": true
+        },
+        {
+          "type": "comparray",
+          "named": true
+        },
+        {
           "type": "compspec",
           "named": true
         },
         {
-          "type": "forspec",
+          "type": "error_expr",
+          "named": true
+        },
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "functionapp",
+          "named": true
+        },
+        {
+          "type": "functiondef",
+          "named": true
+        },
+        {
+          "type": "id",
+          "named": true
+        },
+        {
+          "type": "if_expr",
+          "named": true
+        },
+        {
+          "type": "import",
+          "named": true
+        },
+        {
+          "type": "in_super_expr",
+          "named": true
+        },
+        {
+          "type": "index",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "objadd",
+          "named": true
+        },
+        {
+          "type": "object",
           "named": true
         },
         {
           "type": "objlocal",
+          "named": true
+        },
+        {
+          "type": "outer",
+          "named": true
+        },
+        {
+          "type": "paren",
+          "named": true
+        },
+        {
+          "type": "self",
+          "named": true
+        },
+        {
+          "type": "slice_expr",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "super",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        },
+        {
+          "type": "unary_expr",
           "named": true
         }
       ]

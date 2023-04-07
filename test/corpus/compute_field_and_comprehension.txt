@@ -10,13 +10,22 @@ computed field and comprehension
     [x]: "y" for x in ["k1", "k2"]
   },
   {
+    [x]: "y", for x in ["k1", "k2"]
+  },
+  {
+    [x]: "y" , for x in ["k1", "k2"]
+  },
+  {
+    [x]: "y" 	, 	 for x in ["k1", "k2"]
+  },
+  {
     local v = 1,
     [x]: v for x in ["k1", "k2"]
   }
 ]
 
----
 
+---
 (source_file
   (expr
     (array
@@ -41,13 +50,60 @@ computed field and comprehension
               (value
                 (string))
               (comprehension_tail
-                (forspec
-                  (id)
-                  (array
-                    (expr
-                      (string))
-                    (expr
-                      (string)))))))))
+                (id)
+                (array
+                  (expr
+                    (string))
+                  (expr
+                    (string))))))))
+      (expr
+        (object
+          (member
+            (field
+              (fieldname
+                (id))
+              (hsep)
+              (value
+                (string))
+              (comprehension_tail
+                (id)
+                (array
+                  (expr
+                    (string))
+                  (expr
+                    (string))))))))
+      (expr
+        (object
+          (member
+            (field
+              (fieldname
+                (id))
+              (hsep)
+              (value
+                (string))
+              (comprehension_tail
+                (id)
+                (array
+                  (expr
+                    (string))
+                  (expr
+                    (string))))))))
+      (expr
+        (object
+          (member
+            (field
+              (fieldname
+                (id))
+              (hsep)
+              (value
+                (string))
+              (comprehension_tail
+                (id)
+                (array
+                  (expr
+                    (string))
+                  (expr
+                    (string))))))))
       (expr
         (object
           (member
@@ -64,10 +120,9 @@ computed field and comprehension
               (value
                 (id))
               (comprehension_tail
-                (forspec
-                  (id)
-                  (array
-                    (expr
-                      (string))
-                    (expr
-                      (string))))))))))))
+                (id)
+                (array
+                  (expr
+                    (string))
+                  (expr
+                    (string)))))))))))

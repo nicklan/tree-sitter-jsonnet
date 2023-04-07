@@ -792,16 +792,24 @@
           "members": [
             {
               "type": "STRING",
-              "value": ","
+              "value": "for"
             },
             {
-              "type": "BLANK"
+              "type": "TOKEN",
+              "content": {
+                "type": "PREC",
+                "value": 1,
+                "content": {
+                  "type": "PATTERN",
+                  "value": ",\\s*for\\s"
+                }
+              }
             }
           ]
         },
         {
           "type": "SYMBOL",
-          "name": "forspec"
+          "name": "_forspec_rest"
         },
         {
           "type": "CHOICE",
@@ -1044,6 +1052,15 @@
           "type": "STRING",
           "value": "for"
         },
+        {
+          "type": "SYMBOL",
+          "name": "_forspec_rest"
+        }
+      ]
+    },
+    "_forspec_rest": {
+      "type": "SEQ",
+      "members": [
         {
           "type": "SYMBOL",
           "name": "id"
