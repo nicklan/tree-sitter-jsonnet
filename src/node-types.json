@@ -141,7 +141,7 @@
     }
   },
   {
-    "type": "assert_expr",
+    "type": "assert",
     "named": true,
     "fields": {
       "assertion": {
@@ -368,13 +368,22 @@
           }
         ]
       }
-    },
+    }
+  },
+  {
+    "type": "assert_expr",
+    "named": true,
+    "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "array",
+          "named": true
+        },
+        {
+          "type": "assert",
           "named": true
         },
         {
@@ -2473,7 +2482,7 @@
       "required": true,
       "types": [
         {
-          "type": "assert_expr",
+          "type": "assert",
           "named": true
         },
         {

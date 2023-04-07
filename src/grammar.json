@@ -589,7 +589,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "assert_expr"
+          "name": "assert"
         },
         {
           "type": "SYMBOL",
@@ -2100,6 +2100,48 @@
         ]
       }
     },
+    "assert": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "assert"
+        },
+        {
+          "type": "FIELD",
+          "name": "assertion",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expr"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "message",
+              "content": {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": ":"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "_expr"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
     "assert_expr": {
       "type": "PREC_LEFT",
       "value": 1,
@@ -2107,41 +2149,8 @@
         "type": "SEQ",
         "members": [
           {
-            "type": "STRING",
-            "value": "assert"
-          },
-          {
-            "type": "FIELD",
-            "name": "assertion",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_expr"
-            }
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "FIELD",
-                "name": "message",
-                "content": {
-                  "type": "SEQ",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": ":"
-                    },
-                    {
-                      "type": "SYMBOL",
-                      "name": "_expr"
-                    }
-                  ]
-                }
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "assert"
           },
           {
             "type": "STRING",

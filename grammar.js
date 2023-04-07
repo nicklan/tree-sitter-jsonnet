@@ -139,7 +139,7 @@ module.exports = grammar({
 
     member: $ => choice(
       $.objlocal,
-      $.assert_expr,
+      $.assert,
       $.field
     ),
 
@@ -313,13 +313,19 @@ module.exports = grammar({
 
     in_super_expr: $ => prec.left(PREC.insuper, seq($._expr, "in", "super")),
 
+    assert: $ => seq(
+      "assert",
+      field('assertion', $._expr),
+      optional(field('message', seq(":", $._expr))),
+    ),
+
     assert_expr: $ => prec.left(
       PREC.keyword,
-      seq("assert",
-          field('assertion', $._expr),
-          optional(field('message', seq(":", $._expr))),
-          ';',
-          $._expr)
+      seq(
+        $.assert,
+        ';',
+        $._expr
+      )
     ),
   }
 });

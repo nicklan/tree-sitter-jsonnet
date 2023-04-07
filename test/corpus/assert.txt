@@ -1,0 +1,40 @@
+======
+assert
+======
+
+assert 2 ==2 ;
+
+local x = {
+  assert 1 == 1,
+  x: "x",
+};
+
+x
+
+---
+(source_file
+  (expr
+    (assert_expr
+      (assert
+        (binary_expr
+          (number)
+          (number)))
+      (bindexpr
+        (bind
+          (id)
+          (expr
+            (object
+              (member
+                (assert
+                  (binary_expr
+                    (number)
+                    (number))))
+              (member
+                (field
+                  (fieldname
+                    (id))
+                  (hsep)
+                  (value
+                    (string)))))))
+        (expr
+          (id))))))
