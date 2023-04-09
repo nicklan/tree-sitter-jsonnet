@@ -1116,6 +1116,11 @@
     }
   },
   {
+    "type": "db_qt",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "default_arg",
     "named": true,
     "fields": {},
@@ -3349,6 +3354,10 @@
           "named": true
         },
         {
+          "type": "db_qt",
+          "named": true
+        },
+        {
           "type": "escaped_char",
           "named": true
         },
@@ -3717,6 +3726,10 @@
     "named": false
   },
   {
+    "type": "\"\"",
+    "named": false
+  },
+  {
     "type": "%",
     "named": false
   },
@@ -3730,6 +3743,10 @@
   },
   {
     "type": "'",
+    "named": false
+  },
+  {
+    "type": "''",
     "named": false
   },
   {

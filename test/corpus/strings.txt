@@ -19,6 +19,9 @@ two",
   two
      three',
   u1: "\u01234\u83Fa",
+  lit1: @'"ioj''wow\u0045\\',
+  lit2: @"''x",
+  lit3: @"""x",
 }
 
 ---
@@ -120,4 +123,29 @@ two",
           (value
             (string
               (unicode_escape)
-              (unicode_escape))))))))
+              (unicode_escape)))))
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (string
+              (db_qt)
+              (unicode_escape)
+              (escaped_char)))))
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (string))))
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (string
+              (db_qt))))))))

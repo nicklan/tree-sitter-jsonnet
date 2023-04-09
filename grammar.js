@@ -78,15 +78,13 @@ module.exports = grammar({
 
     paren: $ => prec.left(PREC.paren, seq('(', $._expr, ')')),
 
-    string: $ => {
-      const startdbl = choice('"', '@"');
-      const startsngl = choice("'", "@'");
-      return choice(
-        seq('|||', $.block_string),
-        seq(startdbl, optional($._string_inner_dbl), '"'),
-        seq(startsngl, optional($._string_inner_sngl), "'"),
-      );
-    },
+    string: $ => choice(
+      seq('|||', $.block_string),
+      seq('"', optional($._string_inner_dbl), '"'),
+      seq("'", optional($._string_inner_sngl), "'"),
+      seq('@"', optional($._string_inner_dbl_lit), '"'),
+      seq("@'", optional($._string_inner_sngl_lit), "'"),
+    ),
 
     _string_inner_dbl: $ => repeat1(choice(
       token.immediate(prec(1, /[^\\"]+/)),
@@ -98,10 +96,28 @@ module.exports = grammar({
       $._escaped
     )),
 
+    _string_inner_dbl_lit: $ => repeat1(choice(
+      token.immediate(prec(1, /[^\\"]+/)),
+      $._escaped_w_db_qt
+    )),
+
+    _string_inner_sngl_lit: $ => repeat1(choice(
+      token.immediate(prec(1, /[^\\']+/)),
+      $._escaped_w_db_qt
+    )),
+
     _escaped: $ => choice(
       $.escaped_char,
       $.unicode_escape,
     ),
+
+    _escaped_w_db_qt: $ => choice(
+      $.escaped_char,
+      $.db_qt,
+      $.unicode_escape,
+    ),
+
+    db_qt: $ => choice("''", '""'),
 
     escaped_char: $ => token.immediate(seq(
       '\\',
