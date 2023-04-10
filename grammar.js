@@ -80,10 +80,10 @@ module.exports = grammar({
 
     string: $ => choice(
       seq('|||', $.block_string),
-      seq('"', optional($._string_inner_dbl), '"'),
-      seq("'", optional($._string_inner_sngl), "'"),
       seq('@"', optional($._string_inner_dbl_lit), '"'),
       seq("@'", optional($._string_inner_sngl_lit), "'"),
+      seq('"', optional($._string_inner_dbl), '"'),
+      seq("'", optional($._string_inner_sngl), "'"),
     ),
 
     _string_inner_dbl: $ => repeat1(choice(
@@ -97,13 +97,13 @@ module.exports = grammar({
     )),
 
     _string_inner_dbl_lit: $ => repeat1(choice(
-      token.immediate(prec(1, /[^\\"]+/)),
-      $._escaped_w_db_qt
+      token.immediate(prec(1, /[^"]+/)),
+      $.db_qt,
     )),
 
     _string_inner_sngl_lit: $ => repeat1(choice(
-      token.immediate(prec(1, /[^\\']+/)),
-      $._escaped_w_db_qt
+      token.immediate(prec(1, /[^']+/)),
+      $.db_qt,
     )),
 
     _escaped: $ => choice(

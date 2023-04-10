@@ -22,6 +22,8 @@ two",
   lit1: @'"ioj''wow\u0045\\',
   lit2: @"''x",
   lit3: @"""x",
+  lit_bad_esc: @'foo\x''',
+  lit_bad_dbl: @"foo\u93\C""",
 }
 
 ---
@@ -131,9 +133,7 @@ two",
           (hsep)
           (value
             (string
-              (db_qt)
-              (unicode_escape)
-              (escaped_char)))))
+              (db_qt)))))
       (member
         (field
           (fieldname
@@ -141,6 +141,22 @@ two",
           (hsep)
           (value
             (string))))
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (string
+              (db_qt)))))
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (string
+              (db_qt)))))
       (member
         (field
           (fieldname
