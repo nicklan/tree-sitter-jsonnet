@@ -965,12 +965,20 @@
             "value": "["
           },
           {
-            "type": "FIELD",
-            "name": "start",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_expr"
-            }
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "FIELD",
+                "name": "start",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_expr"
+                }
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
           },
           {
             "type": "CHOICE",
@@ -1009,12 +1017,20 @@
                             "value": ":"
                           },
                           {
-                            "type": "FIELD",
-                            "name": "inc",
-                            "content": {
-                              "type": "SYMBOL",
-                              "name": "_expr"
-                            }
+                            "type": "CHOICE",
+                            "members": [
+                              {
+                                "type": "FIELD",
+                                "name": "inc",
+                                "content": {
+                                  "type": "SYMBOL",
+                                  "name": "_expr"
+                                }
+                              },
+                              {
+                                "type": "BLANK"
+                              }
+                            ]
                           }
                         ]
                       },
@@ -1466,6 +1482,18 @@
           {
             "type": "STRING",
             "value": ")"
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "tailstrict"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
           }
         ]
       }

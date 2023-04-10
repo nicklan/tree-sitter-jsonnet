@@ -1,0 +1,140 @@
+=======
+slicing
+=======
+
+local to_slice = [1,2,3,4,5,6];
+local foo = 2;
+local bar = 4;
+
+[
+  to_slice[:],
+  to_slice[::],
+  to_slice[1:2],
+  to_slice[1:2:3],
+  to_slice[:1],
+  to_slice[1:],
+  to_slice[1::],
+  to_slice[1::2],
+  to_slice[::2],
+  to_slice[(1)::],
+  to_slice[(1)::2],
+  to_slice[(1):(2):3],
+  to_slice[:0:],
+  to_slice[foo:bar],
+  to_slice[foo:bar + 1],
+  (to_slice)[2:100]
+]
+
+---
+(source_file
+  (expr
+    (bindexpr
+      (bind
+        (id)
+        (expr
+          (array
+            (expr
+              (number))
+            (expr
+              (number))
+            (expr
+              (number))
+            (expr
+              (number))
+            (expr
+              (number))
+            (expr
+              (number)))))
+      (expr
+        (bindexpr
+          (bind
+            (id)
+            (expr
+              (number)))
+          (expr
+            (bindexpr
+              (bind
+                (id)
+                (expr
+                  (number)))
+              (expr
+                (array
+                  (expr
+                    (slice_expr
+                      (id)))
+                  (expr
+                    (slice_expr
+                      (id)))
+                  (expr
+                    (slice_expr
+                      (id)
+                      (number)
+                      (number)))
+                  (expr
+                    (slice_expr
+                      (id)
+                      (number)
+                      (number)
+                      (number)))
+                  (expr
+                    (slice_expr
+                      (id)
+                      (number)))
+                  (expr
+                    (slice_expr
+                      (id)
+                      (number)))
+                  (expr
+                    (slice_expr
+                      (id)
+                      (number)))
+                  (expr
+                    (slice_expr
+                      (id)
+                      (number)
+                      (number)))
+                  (expr
+                    (slice_expr
+                      (id)
+                      (number)))
+                  (expr
+                    (slice_expr
+                      (id)
+                      (paren
+                        (number))))
+                  (expr
+                    (slice_expr
+                      (id)
+                      (paren
+                        (number))
+                      (number)))
+                  (expr
+                    (slice_expr
+                      (id)
+                      (paren
+                        (number))
+                      (paren
+                        (number))
+                      (number)))
+                  (expr
+                    (slice_expr
+                      (id)
+                      (number)))
+                  (expr
+                    (slice_expr
+                      (id)
+                      (id)
+                      (id)))
+                  (expr
+                    (slice_expr
+                      (id)
+                      (id)
+                      (binary_expr
+                        (id)
+                        (number))))
+                  (expr
+                    (slice_expr
+                      (paren
+                        (id))
+                      (number)
+                      (number))))))))))))

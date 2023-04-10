@@ -204,12 +204,15 @@ module.exports = grammar({
     slice_expr: $ => prec.left(PREC.appindex, seq(
       $._expr,
       "[",
-      field('start', $._expr),
+      optional(field('start', $._expr)),
       optional(
         seq(
           ":",
           optional(field('end', $._expr)),
-          optional(seq(":", field('inc', $._expr)))
+          optional(seq(
+            ":",
+            optional(field('inc', $._expr))
+          ))
         )
       ),
       "]"
@@ -269,6 +272,7 @@ module.exports = grammar({
       "(",
       optional($.args),
       ")",
+      optional("tailstrict"),
     )),
 
     args: $ => choice(
