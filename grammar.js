@@ -27,6 +27,8 @@ module.exports = grammar({
 
   conflicts: $ => [
     [$.expr, $.comparray],
+    [$.member, $.computed_inside],
+    [$.fieldname, $.computed_inside],
   ],
 
   rules: {
@@ -144,13 +146,13 @@ module.exports = grammar({
       optional(seq(/[eE]/, optional(/[-+]/), /\d+/))
     )),
 
-    object: $ => choice(
-      seq("{", "}"),
-      seq(
-        "{",
-        trailingCommaSep($.member),
-        "}"
+    object: $ => seq(
+      "{",
+      choice(
+        optTrailingCommaSep($.member),
+        $.computed_inside
       ),
+      "}"
     ),
 
     member: $ => choice(
@@ -162,13 +164,12 @@ module.exports = grammar({
     objlocal: $ => seq("local", $.bind),
 
     field: $ => choice(
-      prec.left(seq(
+      seq(
         $.fieldname,
         optional('+'),
         $.hsep,
         $.value,
-        optional($.comprehension_tail),
-      )),
+      ),
       seq(
         $.fieldname,
         "(",
@@ -185,17 +186,22 @@ module.exports = grammar({
       seq("[", $._expr, "]"),
     ),
 
-    hsep: $ => /:{1,3}/,
+    hsep: $ => choice(
+      ':','::', ':::'
+    ),
 
     value: $ => $._expr,
 
-    comprehension_tail: $ => seq(
-      repeat(seq(",", $.objlocal)),
-      choice(
-        'for',
-        token(prec(1, /,\s*for\s/)) // ', for' should have precedence over ', $.field'
-      ),
-      $._forspec_rest,
+    computed_inside: $ => seq(
+      repeat(seq($.objlocal, ',')),
+      '[',
+      $._expr,
+      ']',
+      ':',
+      $._expr,
+      repeat(seq(',', $.objlocal)),
+      optional(','),
+      $.forspec,
       optional($.compspec),
     ),
 

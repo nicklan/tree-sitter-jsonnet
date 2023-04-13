@@ -974,7 +974,26 @@
     }
   },
   {
-    "type": "comprehension_tail",
+    "type": "compspec",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "forspec",
+          "named": true
+        },
+        {
+          "type": "ifspec",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "computed_inside",
     "named": true,
     "fields": {},
     "children": {
@@ -1011,6 +1030,10 @@
         },
         {
           "type": "false",
+          "named": true
+        },
+        {
+          "type": "forspec",
           "named": true
         },
         {
@@ -1091,25 +1114,6 @@
         },
         {
           "type": "unary_expr",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "compspec",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "forspec",
-          "named": true
-        },
-        {
-          "type": "ifspec",
           "named": true
         }
       ]
@@ -1473,10 +1477,6 @@
       "multiple": true,
       "required": true,
       "types": [
-        {
-          "type": "comprehension_tail",
-          "named": true
-        },
         {
           "type": "fieldname",
           "named": true
@@ -1881,6 +1881,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "hsep",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "if_expr",
@@ -2724,6 +2729,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "computed_inside",
+          "named": true
+        },
         {
           "type": "member",
           "named": true
@@ -3786,6 +3795,14 @@
     "named": false
   },
   {
+    "type": "::",
+    "named": false
+  },
+  {
+    "type": ":::",
+    "named": false
+  },
+  {
     "type": ";",
     "named": false
   },
@@ -3876,10 +3893,6 @@
   {
     "type": "function",
     "named": false
-  },
-  {
-    "type": "hsep",
-    "named": true
   },
   {
     "type": "id",

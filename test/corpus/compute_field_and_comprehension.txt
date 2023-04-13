@@ -21,7 +21,8 @@ computed field and comprehension
   {
     local v = 1,
     [x]: v for x in ["k1", "k2"]
-  }
+  },
+  { [x + ""]: x + y, local y = 0 for x in [1, 2, 3] }
 ]
 
 
@@ -42,87 +43,89 @@ computed field and comprehension
                 (number))))))
       (expr
         (object
-          (member
-            (field
-              (fieldname
-                (id))
-              (hsep)
-              (value
-                (string))
-              (comprehension_tail
-                (id)
-                (array
-                  (expr
-                    (string))
-                  (expr
-                    (string))))))))
+          (computed_inside
+            (id)
+            (string)
+            (forspec
+              (id)
+              (array
+                (expr
+                  (string))
+                (expr
+                  (string)))))))
       (expr
         (object
-          (member
-            (field
-              (fieldname
-                (id))
-              (hsep)
-              (value
-                (string))
-              (comprehension_tail
-                (id)
-                (array
-                  (expr
-                    (string))
-                  (expr
-                    (string))))))))
+          (computed_inside
+            (id)
+            (string)
+            (forspec
+              (id)
+              (array
+                (expr
+                  (string))
+                (expr
+                  (string)))))))
       (expr
         (object
-          (member
-            (field
-              (fieldname
-                (id))
-              (hsep)
-              (value
-                (string))
-              (comprehension_tail
-                (id)
-                (array
-                  (expr
-                    (string))
-                  (expr
-                    (string))))))))
+          (computed_inside
+            (id)
+            (string)
+            (forspec
+              (id)
+              (array
+                (expr
+                  (string))
+                (expr
+                  (string)))))))
       (expr
         (object
-          (member
-            (field
-              (fieldname
-                (id))
-              (hsep)
-              (value
-                (string))
-              (comprehension_tail
-                (id)
-                (array
-                  (expr
-                    (string))
-                  (expr
-                    (string))))))))
+          (computed_inside
+            (id)
+            (string)
+            (forspec
+              (id)
+              (array
+                (expr
+                  (string))
+                (expr
+                  (string)))))))
       (expr
         (object
-          (member
+          (computed_inside
             (objlocal
               (bind
                 (id)
                 (expr
-                  (number)))))
-          (member
-            (field
-              (fieldname
-                (id))
-              (hsep)
-              (value
-                (id))
-              (comprehension_tail
+                  (number))))
+            (id)
+            (id)
+            (forspec
+              (id)
+              (array
+                (expr
+                  (string))
+                (expr
+                  (string)))))))
+      (expr
+        (object
+          (computed_inside
+            (binary_expr
+              (id)
+              (string))
+            (binary_expr
+              (id)
+              (id))
+            (objlocal
+              (bind
                 (id)
-                (array
-                  (expr
-                    (string))
-                  (expr
-                    (string)))))))))))
+                (expr
+                  (number))))
+            (forspec
+              (id)
+              (array
+                (expr
+                  (number))
+                (expr
+                  (number))
+                (expr
+                  (number))))))))))
