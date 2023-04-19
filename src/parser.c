@@ -901,7 +901,7 @@ enum {
   field_condition_expr = 3,
   field_else_expr = 4,
   field_end = 5,
-  field_funcname = 6,
+  field_function_name = 6,
   field_inc = 7,
   field_indexobj = 8,
   field_left = 9,
@@ -920,7 +920,7 @@ static const char * const ts_field_names[] = {
   [field_condition_expr] = "condition_expr",
   [field_else_expr] = "else_expr",
   [field_end] = "end",
-  [field_funcname] = "funcname",
+  [field_function_name] = "function_name",
   [field_inc] = "inc",
   [field_indexobj] = "indexobj",
   [field_left] = "left",
@@ -965,7 +965,7 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
   [1] =
     {field_indexobj, 0},
   [2] =
-    {field_funcname, 0},
+    {field_function_name, 0},
   [3] =
     {field_arg, 0},
   [4] =
@@ -1006,7 +1006,7 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
     {field_end, 4},
     {field_start, 2},
   [28] =
-    {field_funcname, 0},
+    {field_function_name, 0},
     {field_params, 2},
   [30] =
     {field_params, 2},
@@ -1019,7 +1019,7 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
     {field_inc, 5},
     {field_start, 2},
   [37] =
-    {field_funcname, 0},
+    {field_function_name, 0},
     {field_params, 2},
     {field_params, 3},
   [40] =
@@ -1027,7 +1027,7 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
     {field_inc, 6},
     {field_start, 2},
   [43] =
-    {field_funcname, 0},
+    {field_function_name, 0},
     {field_params, 2},
     {field_params, 3},
     {field_params, 4},

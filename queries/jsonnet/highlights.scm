@@ -22,7 +22,7 @@
 "function" @function
 
 (bind
- funcname: (id) @function)
+ function_name: (id) @function)
 
 (fieldname) @constant
 
@@ -39,7 +39,7 @@
 (block_comment) @comment
 
 (function_application
- funcname: (id) @function)
+ function_name: (id) @function)
 
 (bind
  (id) @constant)

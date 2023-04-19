@@ -1332,7 +1332,7 @@
           "members": [
             {
               "type": "FIELD",
-              "name": "funcname",
+              "name": "function_name",
               "content": {
                 "type": "SYMBOL",
                 "name": "id"
@@ -1485,7 +1485,7 @@
         "members": [
           {
             "type": "FIELD",
-            "name": "funcname",
+            "name": "function_name",
             "content": {
               "type": "SYMBOL",
               "name": "_expr"

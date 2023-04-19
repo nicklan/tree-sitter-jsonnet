@@ -256,7 +256,7 @@ module.exports = grammar({
     bind: $ => choice(
       seq($.id, "=", $.expr),
       seq(
-        field('funcname', $.id),
+        field('function_name', $.id),
         "(",
         field('params', optTrailingCommaSep($.param)),
         ")",
@@ -274,7 +274,7 @@ module.exports = grammar({
     ),
 
     function_application: $ => prec.left(PREC.appindex, seq(
-      field('funcname', $._expr),
+      field('function_name', $._expr),
       "(",
       optional($.args),
       ")",

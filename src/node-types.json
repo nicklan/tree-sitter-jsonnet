@@ -801,7 +801,7 @@
     "type": "bind",
     "named": true,
     "fields": {
-      "funcname": {
+      "function_name": {
         "multiple": false,
         "required": false,
         "types": [
@@ -1740,7 +1740,7 @@
     "type": "function_application",
     "named": true,
     "fields": {
-      "funcname": {
+      "function_name": {
         "multiple": false,
         "required": true,
         "types": [
