@@ -19,7 +19,7 @@ x
         (binary_expr
           (number)
           (number)))
-      (bindexpr
+      (bind_expr
         (bind
           (id)
           (expr

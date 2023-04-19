@@ -11,7 +11,7 @@ local x = { x: 1 };
 ---
 (source_file
   (expr
-    (bindexpr
+    (bind_expr
       (bind
         (id)
         (expr

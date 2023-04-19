@@ -70,7 +70,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "bindexpr"
+          "name": "bind_expr"
         },
         {
           "type": "SYMBOL",
@@ -1265,7 +1265,7 @@
         }
       ]
     },
-    "bindexpr": {
+    "bind_expr": {
       "type": "SEQ",
       "members": [
         {

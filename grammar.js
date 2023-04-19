@@ -51,7 +51,7 @@ module.exports = grammar({
       $.array,
       $.computed_array,
       $.id,
-      $.bindexpr,
+      $.bind_expr,
       $.import,
       $.functiondef,
       $.functionapp,
@@ -251,7 +251,7 @@ module.exports = grammar({
       "importbin",
     ), $.string),
 
-    bindexpr: $ => seq("local", seq($.bind, repeat(seq(",", $.bind)), ";", $.expr)),
+    bind_expr: $ => seq("local", seq($.bind, repeat(seq(",", $.bind)), ";", $.expr)),
 
     bind: $ => choice(
       seq($.id, "=", $.expr),

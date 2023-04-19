@@ -20,7 +20,7 @@
             "named": true
           },
           {
-            "type": "bindexpr",
+            "type": "bind_expr",
             "named": true
           },
           {
@@ -161,7 +161,7 @@
             "named": true
           },
           {
-            "type": "bindexpr",
+            "type": "bind_expr",
             "named": true
           },
           {
@@ -275,7 +275,7 @@
             "named": true
           },
           {
-            "type": "bindexpr",
+            "type": "bind_expr",
             "named": true
           },
           {
@@ -395,7 +395,7 @@
           "named": true
         },
         {
-          "type": "bindexpr",
+          "type": "bind_expr",
           "named": true
         },
         {
@@ -510,7 +510,7 @@
             "named": true
           },
           {
-            "type": "bindexpr",
+            "type": "bind_expr",
             "named": true
           },
           {
@@ -702,7 +702,7 @@
             "named": true
           },
           {
-            "type": "bindexpr",
+            "type": "bind_expr",
             "named": true
           },
           {
@@ -842,7 +842,7 @@
     }
   },
   {
-    "type": "bindexpr",
+    "type": "bind_expr",
     "named": true,
     "fields": {},
     "children": {
@@ -900,7 +900,7 @@
           "named": true
         },
         {
-          "type": "bindexpr",
+          "type": "bind_expr",
           "named": true
         },
         {
@@ -1023,7 +1023,7 @@
           "named": true
         },
         {
-          "type": "bindexpr",
+          "type": "bind_expr",
           "named": true
         },
         {
@@ -1155,7 +1155,7 @@
           "named": true
         },
         {
-          "type": "bindexpr",
+          "type": "bind_expr",
           "named": true
         },
         {
@@ -1270,7 +1270,7 @@
           "named": true
         },
         {
-          "type": "bindexpr",
+          "type": "bind_expr",
           "named": true
         },
         {
@@ -1385,7 +1385,7 @@
           "named": true
         },
         {
-          "type": "bindexpr",
+          "type": "bind_expr",
           "named": true
         },
         {
@@ -1527,7 +1527,7 @@
           "named": true
         },
         {
-          "type": "bindexpr",
+          "type": "bind_expr",
           "named": true
         },
         {
@@ -1642,7 +1642,7 @@
           "named": true
         },
         {
-          "type": "bindexpr",
+          "type": "bind_expr",
           "named": true
         },
         {
@@ -1757,7 +1757,7 @@
             "named": true
           },
           {
-            "type": "bindexpr",
+            "type": "bind_expr",
             "named": true
           },
           {
@@ -1918,7 +1918,7 @@
             "named": true
           },
           {
-            "type": "bindexpr",
+            "type": "bind_expr",
             "named": true
           },
           {
@@ -2028,7 +2028,7 @@
             "named": true
           },
           {
-            "type": "bindexpr",
+            "type": "bind_expr",
             "named": true
           },
           {
@@ -2138,7 +2138,7 @@
             "named": true
           },
           {
-            "type": "bindexpr",
+            "type": "bind_expr",
             "named": true
           },
           {
@@ -2254,7 +2254,7 @@
           "named": true
         },
         {
-          "type": "bindexpr",
+          "type": "bind_expr",
           "named": true
         },
         {
@@ -2384,7 +2384,7 @@
           "named": true
         },
         {
-          "type": "bindexpr",
+          "type": "bind_expr",
           "named": true
         },
         {
@@ -2567,7 +2567,7 @@
           "named": true
         },
         {
-          "type": "bindexpr",
+          "type": "bind_expr",
           "named": true
         },
         {
@@ -2716,7 +2716,7 @@
           "named": true
         },
         {
-          "type": "bindexpr",
+          "type": "bind_expr",
           "named": true
         },
         {
@@ -2831,7 +2831,7 @@
             "named": true
           },
           {
-            "type": "bindexpr",
+            "type": "bind_expr",
             "named": true
           },
           {
@@ -2941,7 +2941,7 @@
             "named": true
           },
           {
-            "type": "bindexpr",
+            "type": "bind_expr",
             "named": true
           },
           {
@@ -3051,7 +3051,7 @@
             "named": true
           },
           {
-            "type": "bindexpr",
+            "type": "bind_expr",
             "named": true
           },
           {
@@ -3162,7 +3162,7 @@
           "named": true
         },
         {
-          "type": "bindexpr",
+          "type": "bind_expr",
           "named": true
         },
         {
@@ -3319,7 +3319,7 @@
           "named": true
         },
         {
-          "type": "bindexpr",
+          "type": "bind_expr",
           "named": true
         },
         {
@@ -3434,7 +3434,7 @@
           "named": true
         },
         {
-          "type": "bindexpr",
+          "type": "bind_expr",
           "named": true
         },
         {
@@ -3549,7 +3549,7 @@
           "named": true
         },
         {
-          "type": "bindexpr",
+          "type": "bind_expr",
           "named": true
         },
         {
