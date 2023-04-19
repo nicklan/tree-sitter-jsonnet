@@ -7,7 +7,7 @@
     "test": "tree-sitter test"
   },
   "author": "Nick Lanham",
-  "license": "GPL",
+  "license": "MIT",
   "dependencies": {
     "nan": "^2.17.0"
   },
