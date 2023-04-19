@@ -50,7 +50,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "objadd"
+          "name": "object_addition"
         },
         {
           "type": "SYMBOL",
@@ -62,7 +62,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "comparray"
+          "name": "computed_array"
         },
         {
           "type": "SYMBOL",
@@ -957,7 +957,7 @@
         }
       ]
     },
-    "objadd": {
+    "object_addition": {
       "type": "PREC_LEFT",
       "value": 11,
       "content": {
@@ -1135,7 +1135,7 @@
         }
       ]
     },
-    "comparray": {
+    "computed_array": {
       "type": "SEQ",
       "members": [
         {
@@ -1331,8 +1331,12 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "id"
+              "type": "FIELD",
+              "name": "funcname",
+              "content": {
+                "type": "SYMBOL",
+                "name": "id"
+              }
             },
             {
               "type": "STRING",
@@ -1713,8 +1717,12 @@
         "type": "SEQ",
         "members": [
           {
-            "type": "SYMBOL",
-            "name": "_expr"
+            "type": "FIELD",
+            "name": "indexobj",
+            "content": {
+              "type": "SYMBOL",
+              "name": "expr"
+            }
           },
           {
             "type": "STRING",
@@ -2361,7 +2369,7 @@
   "conflicts": [
     [
       "expr",
-      "comparray"
+      "computed_array"
     ],
     [
       "member",

@@ -10,7 +10,7 @@ computed array
 
  (source_file
    (expr
-     (comparray
+     (computed_array
        (id)
        (forspec
          (id)

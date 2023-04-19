@@ -26,7 +26,7 @@ module.exports = grammar({
   ],
 
   conflicts: $ => [
-    [$.expr, $.comparray],
+    [$.expr, $.computed_array],
     [$.member, $.computed_inside],
     [$.fieldname, $.computed_inside],
   ],
@@ -46,10 +46,10 @@ module.exports = grammar({
       $.string,
       $.number,
       $.object,
-      $.objadd,
+      $.object_addition,
       $.slice_expr,
       $.array,
-      $.comparray,
+      $.computed_array,
       $.id,
       $.bindexpr,
       $.import,
@@ -205,7 +205,7 @@ module.exports = grammar({
       optional($.compspec),
     ),
 
-    objadd: $ => prec.left(PREC.add, seq($._expr, $.object)),
+    object_addition: $ => prec.left(PREC.add, seq($._expr, $.object)),
 
     slice_expr: $ => prec.left(PREC.appindex, seq(
       $._expr,
@@ -226,7 +226,7 @@ module.exports = grammar({
 
     array: $ => seq("[", optTrailingCommaSep($.expr), "]"),
 
-    comparray: $=> seq(
+    computed_array: $=> seq(
       "[",
       $._expr,
       optional(","),
@@ -256,7 +256,7 @@ module.exports = grammar({
     bind: $ => choice(
       seq($.id, "=", $.expr),
       seq(
-        $.id,
+        field('funcname', $.id),
         "(",
         field('params', optTrailingCommaSep($.param)),
         ")",
@@ -293,7 +293,14 @@ module.exports = grammar({
 
     param: $ => seq($.id, optional(seq("=", $.expr))),
 
-    index: $ => prec.left(PREC.appindex, seq($._expr, ".", $.id)),
+    index: $ => prec.left(
+      PREC.appindex,
+      seq(
+        field('indexobj', $.expr),
+        ".",
+        $.id
+      )
+    ),
 
     unary_expr: $ => prec(PREC.unary, choice(
       seq('+', $._expr),

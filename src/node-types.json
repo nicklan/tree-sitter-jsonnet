@@ -24,7 +24,7 @@
             "named": true
           },
           {
-            "type": "comparray",
+            "type": "computed_array",
             "named": true
           },
           {
@@ -72,11 +72,11 @@
             "named": true
           },
           {
-            "type": "objadd",
+            "type": "object",
             "named": true
           },
           {
-            "type": "object",
+            "type": "object_addition",
             "named": true
           },
           {
@@ -165,7 +165,7 @@
             "named": true
           },
           {
-            "type": "comparray",
+            "type": "computed_array",
             "named": true
           },
           {
@@ -213,11 +213,11 @@
             "named": true
           },
           {
-            "type": "objadd",
+            "type": "object",
             "named": true
           },
           {
-            "type": "object",
+            "type": "object_addition",
             "named": true
           },
           {
@@ -279,7 +279,7 @@
             "named": true
           },
           {
-            "type": "comparray",
+            "type": "computed_array",
             "named": true
           },
           {
@@ -327,11 +327,11 @@
             "named": true
           },
           {
-            "type": "objadd",
+            "type": "object",
             "named": true
           },
           {
-            "type": "object",
+            "type": "object_addition",
             "named": true
           },
           {
@@ -399,7 +399,7 @@
           "named": true
         },
         {
-          "type": "comparray",
+          "type": "computed_array",
           "named": true
         },
         {
@@ -447,11 +447,11 @@
           "named": true
         },
         {
-          "type": "objadd",
+          "type": "object",
           "named": true
         },
         {
-          "type": "object",
+          "type": "object_addition",
           "named": true
         },
         {
@@ -514,7 +514,7 @@
             "named": true
           },
           {
-            "type": "comparray",
+            "type": "computed_array",
             "named": true
           },
           {
@@ -562,11 +562,11 @@
             "named": true
           },
           {
-            "type": "objadd",
+            "type": "object",
             "named": true
           },
           {
-            "type": "object",
+            "type": "object_addition",
             "named": true
           },
           {
@@ -706,7 +706,7 @@
             "named": true
           },
           {
-            "type": "comparray",
+            "type": "computed_array",
             "named": true
           },
           {
@@ -754,11 +754,11 @@
             "named": true
           },
           {
-            "type": "objadd",
+            "type": "object",
             "named": true
           },
           {
-            "type": "object",
+            "type": "object_addition",
             "named": true
           },
           {
@@ -801,6 +801,16 @@
     "type": "bind",
     "named": true,
     "fields": {
+      "funcname": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "id",
+            "named": true
+          }
+        ]
+      },
       "params": {
         "multiple": true,
         "required": false,
@@ -851,7 +861,26 @@
     }
   },
   {
-    "type": "comparray",
+    "type": "compspec",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "forspec",
+          "named": true
+        },
+        {
+          "type": "ifspec",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "computed_array",
     "named": true,
     "fields": {},
     "children": {
@@ -875,11 +904,11 @@
           "named": true
         },
         {
-          "type": "comparray",
+          "type": "compspec",
           "named": true
         },
         {
-          "type": "compspec",
+          "type": "computed_array",
           "named": true
         },
         {
@@ -931,11 +960,11 @@
           "named": true
         },
         {
-          "type": "objadd",
+          "type": "object",
           "named": true
         },
         {
-          "type": "object",
+          "type": "object_addition",
           "named": true
         },
         {
@@ -974,25 +1003,6 @@
     }
   },
   {
-    "type": "compspec",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "forspec",
-          "named": true
-        },
-        {
-          "type": "ifspec",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "computed_inside",
     "named": true,
     "fields": {},
@@ -1017,11 +1027,11 @@
           "named": true
         },
         {
-          "type": "comparray",
+          "type": "compspec",
           "named": true
         },
         {
-          "type": "compspec",
+          "type": "computed_array",
           "named": true
         },
         {
@@ -1073,11 +1083,11 @@
           "named": true
         },
         {
-          "type": "objadd",
+          "type": "object",
           "named": true
         },
         {
-          "type": "object",
+          "type": "object_addition",
           "named": true
         },
         {
@@ -1149,7 +1159,7 @@
           "named": true
         },
         {
-          "type": "comparray",
+          "type": "computed_array",
           "named": true
         },
         {
@@ -1197,11 +1207,11 @@
           "named": true
         },
         {
-          "type": "objadd",
+          "type": "object",
           "named": true
         },
         {
-          "type": "object",
+          "type": "object_addition",
           "named": true
         },
         {
@@ -1264,7 +1274,7 @@
           "named": true
         },
         {
-          "type": "comparray",
+          "type": "computed_array",
           "named": true
         },
         {
@@ -1312,11 +1322,11 @@
           "named": true
         },
         {
-          "type": "objadd",
+          "type": "object",
           "named": true
         },
         {
-          "type": "object",
+          "type": "object_addition",
           "named": true
         },
         {
@@ -1379,7 +1389,7 @@
           "named": true
         },
         {
-          "type": "comparray",
+          "type": "computed_array",
           "named": true
         },
         {
@@ -1427,11 +1437,11 @@
           "named": true
         },
         {
-          "type": "objadd",
+          "type": "object",
           "named": true
         },
         {
-          "type": "object",
+          "type": "object_addition",
           "named": true
         },
         {
@@ -1521,7 +1531,7 @@
           "named": true
         },
         {
-          "type": "comparray",
+          "type": "computed_array",
           "named": true
         },
         {
@@ -1569,11 +1579,11 @@
           "named": true
         },
         {
-          "type": "objadd",
+          "type": "object",
           "named": true
         },
         {
-          "type": "object",
+          "type": "object_addition",
           "named": true
         },
         {
@@ -1636,7 +1646,7 @@
           "named": true
         },
         {
-          "type": "comparray",
+          "type": "computed_array",
           "named": true
         },
         {
@@ -1684,11 +1694,11 @@
           "named": true
         },
         {
-          "type": "objadd",
+          "type": "object",
           "named": true
         },
         {
-          "type": "object",
+          "type": "object_addition",
           "named": true
         },
         {
@@ -1751,7 +1761,7 @@
             "named": true
           },
           {
-            "type": "comparray",
+            "type": "computed_array",
             "named": true
           },
           {
@@ -1799,11 +1809,11 @@
             "named": true
           },
           {
-            "type": "objadd",
+            "type": "object",
             "named": true
           },
           {
-            "type": "object",
+            "type": "object_addition",
             "named": true
           },
           {
@@ -1912,7 +1922,7 @@
             "named": true
           },
           {
-            "type": "comparray",
+            "type": "computed_array",
             "named": true
           },
           {
@@ -1960,11 +1970,11 @@
             "named": true
           },
           {
-            "type": "objadd",
+            "type": "object",
             "named": true
           },
           {
-            "type": "object",
+            "type": "object_addition",
             "named": true
           },
           {
@@ -2022,7 +2032,7 @@
             "named": true
           },
           {
-            "type": "comparray",
+            "type": "computed_array",
             "named": true
           },
           {
@@ -2070,11 +2080,11 @@
             "named": true
           },
           {
-            "type": "objadd",
+            "type": "object",
             "named": true
           },
           {
-            "type": "object",
+            "type": "object_addition",
             "named": true
           },
           {
@@ -2132,7 +2142,7 @@
             "named": true
           },
           {
-            "type": "comparray",
+            "type": "computed_array",
             "named": true
           },
           {
@@ -2180,11 +2190,11 @@
             "named": true
           },
           {
-            "type": "objadd",
+            "type": "object",
             "named": true
           },
           {
-            "type": "object",
+            "type": "object_addition",
             "named": true
           },
           {
@@ -2248,7 +2258,7 @@
           "named": true
         },
         {
-          "type": "comparray",
+          "type": "computed_array",
           "named": true
         },
         {
@@ -2296,11 +2306,11 @@
           "named": true
         },
         {
-          "type": "objadd",
+          "type": "object",
           "named": true
         },
         {
-          "type": "object",
+          "type": "object_addition",
           "named": true
         },
         {
@@ -2378,7 +2388,7 @@
           "named": true
         },
         {
-          "type": "comparray",
+          "type": "computed_array",
           "named": true
         },
         {
@@ -2426,11 +2436,11 @@
           "named": true
         },
         {
-          "type": "objadd",
+          "type": "object",
           "named": true
         },
         {
-          "type": "object",
+          "type": "object_addition",
           "named": true
         },
         {
@@ -2471,113 +2481,24 @@
   {
     "type": "index",
     "named": true,
-    "fields": {},
+    "fields": {
+      "indexobj": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "expr",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "array",
-          "named": true
-        },
-        {
-          "type": "assert_expr",
-          "named": true
-        },
-        {
-          "type": "binary_expr",
-          "named": true
-        },
-        {
-          "type": "bindexpr",
-          "named": true
-        },
-        {
-          "type": "comparray",
-          "named": true
-        },
-        {
-          "type": "error_expr",
-          "named": true
-        },
-        {
-          "type": "false",
-          "named": true
-        },
-        {
-          "type": "functionapp",
-          "named": true
-        },
-        {
-          "type": "functiondef",
-          "named": true
-        },
-        {
           "type": "id",
-          "named": true
-        },
-        {
-          "type": "if_expr",
-          "named": true
-        },
-        {
-          "type": "import",
-          "named": true
-        },
-        {
-          "type": "in_super_expr",
-          "named": true
-        },
-        {
-          "type": "index",
-          "named": true
-        },
-        {
-          "type": "null",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "objadd",
-          "named": true
-        },
-        {
-          "type": "object",
-          "named": true
-        },
-        {
-          "type": "outer",
-          "named": true
-        },
-        {
-          "type": "paren",
-          "named": true
-        },
-        {
-          "type": "self",
-          "named": true
-        },
-        {
-          "type": "slice_expr",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "super",
-          "named": true
-        },
-        {
-          "type": "true",
-          "named": true
-        },
-        {
-          "type": "unary_expr",
           "named": true
         }
       ]
@@ -2607,7 +2528,26 @@
     }
   },
   {
-    "type": "objadd",
+    "type": "object",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "computed_inside",
+          "named": true
+        },
+        {
+          "type": "member",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "object_addition",
     "named": true,
     "fields": {},
     "children": {
@@ -2631,7 +2571,7 @@
           "named": true
         },
         {
-          "type": "comparray",
+          "type": "computed_array",
           "named": true
         },
         {
@@ -2679,11 +2619,11 @@
           "named": true
         },
         {
-          "type": "objadd",
+          "type": "object",
           "named": true
         },
         {
-          "type": "object",
+          "type": "object_addition",
           "named": true
         },
         {
@@ -2716,25 +2656,6 @@
         },
         {
           "type": "unary_expr",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "object",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "computed_inside",
-          "named": true
-        },
-        {
-          "type": "member",
           "named": true
         }
       ]
@@ -2799,7 +2720,7 @@
           "named": true
         },
         {
-          "type": "comparray",
+          "type": "computed_array",
           "named": true
         },
         {
@@ -2847,11 +2768,11 @@
           "named": true
         },
         {
-          "type": "objadd",
+          "type": "object",
           "named": true
         },
         {
-          "type": "object",
+          "type": "object_addition",
           "named": true
         },
         {
@@ -2914,7 +2835,7 @@
             "named": true
           },
           {
-            "type": "comparray",
+            "type": "computed_array",
             "named": true
           },
           {
@@ -2962,11 +2883,11 @@
             "named": true
           },
           {
-            "type": "objadd",
+            "type": "object",
             "named": true
           },
           {
-            "type": "object",
+            "type": "object_addition",
             "named": true
           },
           {
@@ -3024,7 +2945,7 @@
             "named": true
           },
           {
-            "type": "comparray",
+            "type": "computed_array",
             "named": true
           },
           {
@@ -3072,11 +2993,11 @@
             "named": true
           },
           {
-            "type": "objadd",
+            "type": "object",
             "named": true
           },
           {
-            "type": "object",
+            "type": "object_addition",
             "named": true
           },
           {
@@ -3134,7 +3055,7 @@
             "named": true
           },
           {
-            "type": "comparray",
+            "type": "computed_array",
             "named": true
           },
           {
@@ -3182,11 +3103,11 @@
             "named": true
           },
           {
-            "type": "objadd",
+            "type": "object",
             "named": true
           },
           {
-            "type": "object",
+            "type": "object_addition",
             "named": true
           },
           {
@@ -3245,7 +3166,7 @@
           "named": true
         },
         {
-          "type": "comparray",
+          "type": "computed_array",
           "named": true
         },
         {
@@ -3293,11 +3214,11 @@
           "named": true
         },
         {
-          "type": "objadd",
+          "type": "object",
           "named": true
         },
         {
-          "type": "object",
+          "type": "object_addition",
           "named": true
         },
         {
@@ -3402,7 +3323,7 @@
           "named": true
         },
         {
-          "type": "comparray",
+          "type": "computed_array",
           "named": true
         },
         {
@@ -3450,11 +3371,11 @@
           "named": true
         },
         {
-          "type": "objadd",
+          "type": "object",
           "named": true
         },
         {
-          "type": "object",
+          "type": "object_addition",
           "named": true
         },
         {
@@ -3517,7 +3438,7 @@
           "named": true
         },
         {
-          "type": "comparray",
+          "type": "computed_array",
           "named": true
         },
         {
@@ -3565,11 +3486,11 @@
           "named": true
         },
         {
-          "type": "objadd",
+          "type": "object",
           "named": true
         },
         {
-          "type": "object",
+          "type": "object_addition",
           "named": true
         },
         {
@@ -3632,7 +3553,7 @@
           "named": true
         },
         {
-          "type": "comparray",
+          "type": "computed_array",
           "named": true
         },
         {
@@ -3680,11 +3601,11 @@
           "named": true
         },
         {
-          "type": "objadd",
+          "type": "object",
           "named": true
         },
         {
-          "type": "object",
+          "type": "object_addition",
           "named": true
         },
         {
