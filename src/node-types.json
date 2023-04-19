@@ -36,11 +36,11 @@
             "named": true
           },
           {
-            "type": "functionapp",
+            "type": "function_application",
             "named": true
           },
           {
-            "type": "functiondef",
+            "type": "function_definition",
             "named": true
           },
           {
@@ -177,11 +177,11 @@
             "named": true
           },
           {
-            "type": "functionapp",
+            "type": "function_application",
             "named": true
           },
           {
-            "type": "functiondef",
+            "type": "function_definition",
             "named": true
           },
           {
@@ -291,11 +291,11 @@
             "named": true
           },
           {
-            "type": "functionapp",
+            "type": "function_application",
             "named": true
           },
           {
-            "type": "functiondef",
+            "type": "function_definition",
             "named": true
           },
           {
@@ -411,11 +411,11 @@
           "named": true
         },
         {
-          "type": "functionapp",
+          "type": "function_application",
           "named": true
         },
         {
-          "type": "functiondef",
+          "type": "function_definition",
           "named": true
         },
         {
@@ -526,11 +526,11 @@
             "named": true
           },
           {
-            "type": "functionapp",
+            "type": "function_application",
             "named": true
           },
           {
-            "type": "functiondef",
+            "type": "function_definition",
             "named": true
           },
           {
@@ -718,11 +718,11 @@
             "named": true
           },
           {
-            "type": "functionapp",
+            "type": "function_application",
             "named": true
           },
           {
-            "type": "functiondef",
+            "type": "function_definition",
             "named": true
           },
           {
@@ -924,11 +924,11 @@
           "named": true
         },
         {
-          "type": "functionapp",
+          "type": "function_application",
           "named": true
         },
         {
-          "type": "functiondef",
+          "type": "function_definition",
           "named": true
         },
         {
@@ -1047,11 +1047,11 @@
           "named": true
         },
         {
-          "type": "functionapp",
+          "type": "function_application",
           "named": true
         },
         {
-          "type": "functiondef",
+          "type": "function_definition",
           "named": true
         },
         {
@@ -1171,11 +1171,11 @@
           "named": true
         },
         {
-          "type": "functionapp",
+          "type": "function_application",
           "named": true
         },
         {
-          "type": "functiondef",
+          "type": "function_definition",
           "named": true
         },
         {
@@ -1286,11 +1286,11 @@
           "named": true
         },
         {
-          "type": "functionapp",
+          "type": "function_application",
           "named": true
         },
         {
-          "type": "functiondef",
+          "type": "function_definition",
           "named": true
         },
         {
@@ -1401,11 +1401,11 @@
           "named": true
         },
         {
-          "type": "functionapp",
+          "type": "function_application",
           "named": true
         },
         {
-          "type": "functiondef",
+          "type": "function_definition",
           "named": true
         },
         {
@@ -1543,11 +1543,11 @@
           "named": true
         },
         {
-          "type": "functionapp",
+          "type": "function_application",
           "named": true
         },
         {
-          "type": "functiondef",
+          "type": "function_definition",
           "named": true
         },
         {
@@ -1658,11 +1658,11 @@
           "named": true
         },
         {
-          "type": "functionapp",
+          "type": "function_application",
           "named": true
         },
         {
-          "type": "functiondef",
+          "type": "function_definition",
           "named": true
         },
         {
@@ -1737,7 +1737,7 @@
     }
   },
   {
-    "type": "functionapp",
+    "type": "function_application",
     "named": true,
     "fields": {
       "funcname": {
@@ -1773,11 +1773,11 @@
             "named": true
           },
           {
-            "type": "functionapp",
+            "type": "function_application",
             "named": true
           },
           {
-            "type": "functiondef",
+            "type": "function_definition",
             "named": true
           },
           {
@@ -1863,7 +1863,7 @@
     }
   },
   {
-    "type": "functiondef",
+    "type": "function_definition",
     "named": true,
     "fields": {
       "params": {
@@ -1934,11 +1934,11 @@
             "named": true
           },
           {
-            "type": "functionapp",
+            "type": "function_application",
             "named": true
           },
           {
-            "type": "functiondef",
+            "type": "function_definition",
             "named": true
           },
           {
@@ -2044,11 +2044,11 @@
             "named": true
           },
           {
-            "type": "functionapp",
+            "type": "function_application",
             "named": true
           },
           {
-            "type": "functiondef",
+            "type": "function_definition",
             "named": true
           },
           {
@@ -2154,11 +2154,11 @@
             "named": true
           },
           {
-            "type": "functionapp",
+            "type": "function_application",
             "named": true
           },
           {
-            "type": "functiondef",
+            "type": "function_definition",
             "named": true
           },
           {
@@ -2270,11 +2270,11 @@
           "named": true
         },
         {
-          "type": "functionapp",
+          "type": "function_application",
           "named": true
         },
         {
-          "type": "functiondef",
+          "type": "function_definition",
           "named": true
         },
         {
@@ -2400,11 +2400,11 @@
           "named": true
         },
         {
-          "type": "functionapp",
+          "type": "function_application",
           "named": true
         },
         {
-          "type": "functiondef",
+          "type": "function_definition",
           "named": true
         },
         {
@@ -2583,11 +2583,11 @@
           "named": true
         },
         {
-          "type": "functionapp",
+          "type": "function_application",
           "named": true
         },
         {
-          "type": "functiondef",
+          "type": "function_definition",
           "named": true
         },
         {
@@ -2732,11 +2732,11 @@
           "named": true
         },
         {
-          "type": "functionapp",
+          "type": "function_application",
           "named": true
         },
         {
-          "type": "functiondef",
+          "type": "function_definition",
           "named": true
         },
         {
@@ -2847,11 +2847,11 @@
             "named": true
           },
           {
-            "type": "functionapp",
+            "type": "function_application",
             "named": true
           },
           {
-            "type": "functiondef",
+            "type": "function_definition",
             "named": true
           },
           {
@@ -2957,11 +2957,11 @@
             "named": true
           },
           {
-            "type": "functionapp",
+            "type": "function_application",
             "named": true
           },
           {
-            "type": "functiondef",
+            "type": "function_definition",
             "named": true
           },
           {
@@ -3067,11 +3067,11 @@
             "named": true
           },
           {
-            "type": "functionapp",
+            "type": "function_application",
             "named": true
           },
           {
-            "type": "functiondef",
+            "type": "function_definition",
             "named": true
           },
           {
@@ -3178,11 +3178,11 @@
           "named": true
         },
         {
-          "type": "functionapp",
+          "type": "function_application",
           "named": true
         },
         {
-          "type": "functiondef",
+          "type": "function_definition",
           "named": true
         },
         {
@@ -3335,11 +3335,11 @@
           "named": true
         },
         {
-          "type": "functionapp",
+          "type": "function_application",
           "named": true
         },
         {
-          "type": "functiondef",
+          "type": "function_definition",
           "named": true
         },
         {
@@ -3450,11 +3450,11 @@
           "named": true
         },
         {
-          "type": "functionapp",
+          "type": "function_application",
           "named": true
         },
         {
-          "type": "functiondef",
+          "type": "function_definition",
           "named": true
         },
         {
@@ -3565,11 +3565,11 @@
           "named": true
         },
         {
-          "type": "functionapp",
+          "type": "function_application",
           "named": true
         },
         {
-          "type": "functiondef",
+          "type": "function_definition",
           "named": true
         },
         {

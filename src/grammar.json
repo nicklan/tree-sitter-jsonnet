@@ -78,11 +78,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "functiondef"
+          "name": "function_definition"
         },
         {
           "type": "SYMBOL",
-          "name": "functionapp"
+          "name": "function_application"
         },
         {
           "type": "SYMBOL",
@@ -1407,7 +1407,7 @@
         }
       ]
     },
-    "functiondef": {
+    "function_definition": {
       "type": "SEQ",
       "members": [
         {
@@ -1477,7 +1477,7 @@
         }
       ]
     },
-    "functionapp": {
+    "function_application": {
       "type": "PREC_LEFT",
       "value": 14,
       "content": {

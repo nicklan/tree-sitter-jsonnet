@@ -14,7 +14,7 @@ function application
    (expr
      (array
        (expr
-         (functionapp
+         (function_application
            (id)
            (args
              (number)
@@ -23,14 +23,14 @@ function application
                (id)
                (number)))))
        (expr
-         (functionapp
+         (function_application
            (id)
            (args
              (default_arg
                (id)
                (number)))))
        (expr
-         (functionapp
+         (function_application
            (id)
            (args
              (default_arg

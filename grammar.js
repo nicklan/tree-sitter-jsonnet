@@ -53,8 +53,8 @@ module.exports = grammar({
       $.id,
       $.bind_expr,
       $.import,
-      $.functiondef,
-      $.functionapp,
+      $.function_definition,
+      $.function_application,
       $.index,
       $.unary_expr,
       $.binary_expr,
@@ -265,7 +265,7 @@ module.exports = grammar({
       )
     ),
 
-    functiondef: $ => seq(
+    function_definition: $ => seq(
       "function",
       "(",
       field("params", optTrailingCommaSep($.param)),
@@ -273,7 +273,7 @@ module.exports = grammar({
       $.expr
     ),
 
-    functionapp: $ => prec.left(PREC.appindex, seq(
+    function_application: $ => prec.left(PREC.appindex, seq(
       field('funcname', $._expr),
       "(",
       optional($.args),
