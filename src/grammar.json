@@ -54,7 +54,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "slice_expr"
+          "name": "slice"
         },
         {
           "type": "SYMBOL",
@@ -974,7 +974,7 @@
         ]
       }
     },
-    "slice_expr": {
+    "slice": {
       "type": "PREC_LEFT",
       "value": 14,
       "content": {

@@ -47,7 +47,7 @@ module.exports = grammar({
       $.number,
       $.object,
       $.object_addition,
-      $.slice_expr,
+      $.slice,
       $.array,
       $.computed_array,
       $.id,
@@ -207,7 +207,7 @@ module.exports = grammar({
 
     object_addition: $ => prec.left(PREC.add, seq($._expr, $.object)),
 
-    slice_expr: $ => prec.left(PREC.appindex, seq(
+    slice: $ => prec.left(PREC.appindex, seq(
       $._expr,
       "[",
       optional(field('start', $._expr)),

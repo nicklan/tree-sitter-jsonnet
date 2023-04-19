@@ -60,56 +60,56 @@ local bar = 4;
               (expr
                 (array
                   (expr
-                    (slice_expr
+                    (slice
                       (id)))
                   (expr
-                    (slice_expr
+                    (slice
                       (id)))
                   (expr
-                    (slice_expr
+                    (slice
                       (id)
                       (number)
                       (number)))
                   (expr
-                    (slice_expr
+                    (slice
                       (id)
                       (number)
                       (number)
                       (number)))
                   (expr
-                    (slice_expr
+                    (slice
                       (id)
                       (number)))
                   (expr
-                    (slice_expr
+                    (slice
                       (id)
                       (number)))
                   (expr
-                    (slice_expr
+                    (slice
                       (id)
                       (number)))
                   (expr
-                    (slice_expr
+                    (slice
                       (id)
                       (number)
                       (number)))
                   (expr
-                    (slice_expr
+                    (slice
                       (id)
                       (number)))
                   (expr
-                    (slice_expr
+                    (slice
                       (id)
                       (paren
                         (number))))
                   (expr
-                    (slice_expr
+                    (slice
                       (id)
                       (paren
                         (number))
                       (number)))
                   (expr
-                    (slice_expr
+                    (slice
                       (id)
                       (paren
                         (number))
@@ -117,23 +117,23 @@ local bar = 4;
                         (number))
                       (number)))
                   (expr
-                    (slice_expr
+                    (slice
                       (id)
                       (number)))
                   (expr
-                    (slice_expr
+                    (slice
                       (id)
                       (id)
                       (id)))
                   (expr
-                    (slice_expr
+                    (slice
                       (id)
                       (id)
                       (binary_expr
                         (id)
                         (number))))
                   (expr
-                    (slice_expr
+                    (slice
                       (paren
                         (id))
                       (number)
