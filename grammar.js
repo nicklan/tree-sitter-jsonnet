@@ -297,7 +297,7 @@ module.exports = grammar({
       PREC.appindex,
       seq(
         field('indexobj', $.expr),
-        ".",
+        '.',
         $.id
       )
     ),
@@ -336,7 +336,7 @@ module.exports = grammar({
         'if',
         field('condition_expr', $._expr),
         'then',
-        field('true_expr', $._expr),
+        field('true_expr', $.expr), // todo, why does making this $._expr break?
         optional(
           seq(
             'else',

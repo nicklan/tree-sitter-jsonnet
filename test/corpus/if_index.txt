@@ -1,0 +1,29 @@
+========
+if index
+========
+{
+  get:
+    if false then
+      x.y
+    else
+      false
+}
+
+---
+(source_file
+  (expr
+    (object
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (if_expr
+              (false)
+              (expr
+                (index
+                  (expr
+                    (id))
+                  (id)))
+              (false))))))))

@@ -15,8 +15,9 @@ else
   (expr
     (if_expr
       (true)
-      (if_expr
-        (true)
-        (true)
-        (number))
+      (expr (if_expr
+              (true)
+              (expr
+                 (true))
+              (number)))
       (false))))
