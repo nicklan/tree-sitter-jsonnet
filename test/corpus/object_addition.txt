@@ -1,6 +1,6 @@
-===============
+================================================================================
 object addition
-===============
+================================================================================
 local x = { x: 1 };
 
 [
@@ -8,49 +8,45 @@ local x = { x: 1 };
   x { y : 2 },
 ]
 
----
+--------------------------------------------------------------------------------
+
 (source_file
-  (expr
-    (bind_expr
-      (bind
+  (bind_expr
+    (bind
+      (id)
+      (object
+        (member
+          (field
+            (fieldname
+              (id))
+            (hsep)
+            (value
+              (number))))))
+    (array
+      (object_addition
+        (object
+          (member
+            (field
+              (fieldname
+                (id))
+              (hsep)
+              (value
+                (number)))))
+        (object
+          (member
+            (field
+              (fieldname
+                (id))
+              (hsep)
+              (value
+                (number))))))
+      (object_addition
         (id)
-        (expr
-          (object
-            (member
-              (field
-                (fieldname
-                  (id))
-                (hsep)
-                (value
-                  (number)))))))
-      (expr
-        (array
-          (expr
-            (object_addition
-              (object
-                (member
-                  (field
-                    (fieldname
-                      (id))
-                    (hsep)
-                    (value
-                      (number)))))
-              (object
-                (member
-                  (field
-                    (fieldname
-                      (id))
-                    (hsep)
-                    (value
-                      (number)))))))
-          (expr
-            (object_addition
-              (id)
-              (object
-                (member
-                  (field
-                    (fieldname
-                      (id))
-                    (hsep)
-                    (value
-                      (number))))))))))))
+        (object
+          (member
+            (field
+              (fieldname
+                (id))
+              (hsep)
+              (value
+                (number)))))))))

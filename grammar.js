@@ -26,15 +26,13 @@ module.exports = grammar({
   ],
 
   conflicts: $ => [
-    [$.expr, $.computed_array],
+    [$._expr, $.computed_array],
     [$.member, $.computed_inside],
     [$.fieldname, $.computed_inside],
   ],
 
   rules: {
-    source_file: $ => $.expr,
-
-    expr: $ => $._expr,
+    source_file: $ => $._expr,
 
     _expr: $ => choice(
       $.null,
@@ -224,7 +222,7 @@ module.exports = grammar({
       "]"
     )),
 
-    array: $ => seq("[", optTrailingCommaSep($.expr), "]"),
+    array: $ => seq("[", optTrailingCommaSep($._expr), "]"),
 
     computed_array: $=> seq(
       "[",
@@ -251,17 +249,17 @@ module.exports = grammar({
       "importbin",
     ), $.string),
 
-    bind_expr: $ => seq("local", seq($.bind, repeat(seq(",", $.bind)), ";", $.expr)),
+    bind_expr: $ => seq("local", seq($.bind, repeat(seq(",", $.bind)), ";", $._expr)),
 
     bind: $ => choice(
-      seq($.id, "=", $.expr),
+      seq($.id, "=", $._expr),
       seq(
         field('function_name', $.id),
         "(",
         field('params', optTrailingCommaSep($.param)),
         ")",
         "=",
-        $.expr
+        $._expr
       )
     ),
 
@@ -270,7 +268,7 @@ module.exports = grammar({
       "(",
       field("params", optTrailingCommaSep($.param)),
       ")",
-      $.expr
+      $._expr
     ),
 
     function_application: $ => prec.left(PREC.appindex, seq(
@@ -291,12 +289,12 @@ module.exports = grammar({
 
     default_arg: $ => seq($.id, "=", $._expr),
 
-    param: $ => seq($.id, optional(seq("=", $.expr))),
+    param: $ => seq($.id, optional(seq("=", $._expr))),
 
     index: $ => prec.left(
       PREC.appindex,
       seq(
-        field('indexobj', $.expr),
+        field('indexobj', $._expr),
         '.',
         $.id
       )
@@ -336,7 +334,7 @@ module.exports = grammar({
         'if',
         field('condition_expr', $._expr),
         'then',
-        field('true_expr', $.expr), // todo, why does making this $._expr break?
+        field('true_expr', $._expr),
         optional(
           seq(
             'else',

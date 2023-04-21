@@ -1,6 +1,6 @@
-============
+================================================================================
 basic object
-============
+================================================================================
 
 {
   a: 1,
@@ -11,50 +11,49 @@ basic object
   f+::: 6,
 }
 
----
+--------------------------------------------------------------------------------
 
- (source_file
-   (expr
-     (object
-       (member
-         (field
-           (fieldname
-             (id))
-           (hsep)
-           (value
-             (number))))
-       (member
-         (field
-           (fieldname
-             (id))
-           (hsep)
-           (value
-             (number))))
-       (member
-         (field
-           (fieldname
-             (id))
-           (hsep)
-           (value
-             (number))))
-       (member
-         (field
-           (fieldname
-             (id))
-           (hsep)
-           (value
-             (number))))
-       (member
-         (field
-           (fieldname
-             (id))
-           (hsep)
-           (value
-             (number))))
-       (member
-         (field
-           (fieldname
-             (id))
-           (hsep)
-           (value
-             (number)))))))
+(source_file
+  (object
+    (member
+      (field
+        (fieldname
+          (id))
+        (hsep)
+        (value
+          (number))))
+    (member
+      (field
+        (fieldname
+          (id))
+        (hsep)
+        (value
+          (number))))
+    (member
+      (field
+        (fieldname
+          (id))
+        (hsep)
+        (value
+          (number))))
+    (member
+      (field
+        (fieldname
+          (id))
+        (hsep)
+        (value
+          (number))))
+    (member
+      (field
+        (fieldname
+          (id))
+        (hsep)
+        (value
+          (number))))
+    (member
+      (field
+        (fieldname
+          (id))
+        (hsep)
+        (value
+          (number))))))

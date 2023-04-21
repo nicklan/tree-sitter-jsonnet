@@ -45,4 +45,4 @@
  (id) @constant)
 
 (index
- indexobj: (expr) @variable.builtin)
+ indexobj: (_) @variable.builtin)

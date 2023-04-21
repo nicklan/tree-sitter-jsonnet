@@ -1,30 +1,26 @@
-==============
+================================================================================
 computed array
-==============
+================================================================================
 
 [
   x, for x in [1,2,3] if x % 2 != 0
 ]
 
----
+--------------------------------------------------------------------------------
 
- (source_file
-   (expr
-     (computed_array
-       (id)
-       (forspec
-         (id)
-         (array
-           (expr
-             (number))
-           (expr
-             (number))
-           (expr
-             (number))))
-       (compspec
-         (ifspec
-           (binary_expr
-             (binary_expr
-               (id)
-               (number))
-             (number)))))))
+(source_file
+  (computed_array
+    (id)
+    (forspec
+      (id)
+      (array
+        (number)
+        (number)
+        (number)))
+    (compspec
+      (ifspec
+        (binary_expr
+          (binary_expr
+            (id)
+            (number))
+          (number))))))

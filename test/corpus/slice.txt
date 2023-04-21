@@ -1,6 +1,6 @@
-=======
+================================================================================
 slicing
-=======
+================================================================================
 
 local to_slice = [1,2,3,4,5,6];
 local foo = 2;
@@ -25,116 +25,88 @@ local bar = 4;
   (to_slice)[2:100]
 ]
 
----
+--------------------------------------------------------------------------------
+
 (source_file
-  (expr
+  (bind_expr
+    (bind
+      (id)
+      (array
+        (number)
+        (number)
+        (number)
+        (number)
+        (number)
+        (number)))
     (bind_expr
       (bind
         (id)
-        (expr
-          (array
-            (expr
-              (number))
-            (expr
-              (number))
-            (expr
-              (number))
-            (expr
-              (number))
-            (expr
-              (number))
-            (expr
-              (number)))))
-      (expr
-        (bind_expr
-          (bind
+        (number))
+      (bind_expr
+        (bind
+          (id)
+          (number))
+        (array
+          (slice
+            (id))
+          (slice
+            (id))
+          (slice
             (id)
-            (expr
+            (number)
+            (number))
+          (slice
+            (id)
+            (number)
+            (number)
+            (number))
+          (slice
+            (id)
+            (number))
+          (slice
+            (id)
+            (number))
+          (slice
+            (id)
+            (number))
+          (slice
+            (id)
+            (number)
+            (number))
+          (slice
+            (id)
+            (number))
+          (slice
+            (id)
+            (paren
               (number)))
-          (expr
-            (bind_expr
-              (bind
-                (id)
-                (expr
-                  (number)))
-              (expr
-                (array
-                  (expr
-                    (slice
-                      (id)))
-                  (expr
-                    (slice
-                      (id)))
-                  (expr
-                    (slice
-                      (id)
-                      (number)
-                      (number)))
-                  (expr
-                    (slice
-                      (id)
-                      (number)
-                      (number)
-                      (number)))
-                  (expr
-                    (slice
-                      (id)
-                      (number)))
-                  (expr
-                    (slice
-                      (id)
-                      (number)))
-                  (expr
-                    (slice
-                      (id)
-                      (number)))
-                  (expr
-                    (slice
-                      (id)
-                      (number)
-                      (number)))
-                  (expr
-                    (slice
-                      (id)
-                      (number)))
-                  (expr
-                    (slice
-                      (id)
-                      (paren
-                        (number))))
-                  (expr
-                    (slice
-                      (id)
-                      (paren
-                        (number))
-                      (number)))
-                  (expr
-                    (slice
-                      (id)
-                      (paren
-                        (number))
-                      (paren
-                        (number))
-                      (number)))
-                  (expr
-                    (slice
-                      (id)
-                      (number)))
-                  (expr
-                    (slice
-                      (id)
-                      (id)
-                      (id)))
-                  (expr
-                    (slice
-                      (id)
-                      (id)
-                      (binary_expr
-                        (id)
-                        (number))))
-                  (expr
-                    (slice
-                      (paren
-                        (id))
-                      (number)
-                      (number))))))))))))
+          (slice
+            (id)
+            (paren
+              (number))
+            (number))
+          (slice
+            (id)
+            (paren
+              (number))
+            (paren
+              (number))
+            (number))
+          (slice
+            (id)
+            (number))
+          (slice
+            (id)
+            (id)
+            (id))
+          (slice
+            (id)
+            (id)
+            (binary_expr
+              (id)
+              (number)))
+          (slice
+            (paren
+              (id))
+            (number)
+            (number)))))))

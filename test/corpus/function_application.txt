@@ -1,6 +1,6 @@
-====================
+================================================================================
 function application
-====================
+================================================================================
 
 [
   x(1,2,y=1),
@@ -8,34 +8,30 @@ function application
   z(x=4,y=10),
 ]
 
----
+--------------------------------------------------------------------------------
 
 (source_file
-   (expr
-     (array
-       (expr
-         (function_application
-           (id)
-           (args
-             (number)
-             (number)
-             (default_arg
-               (id)
-               (number)))))
-       (expr
-         (function_application
-           (id)
-           (args
-             (default_arg
-               (id)
-               (number)))))
-       (expr
-         (function_application
-           (id)
-           (args
-             (default_arg
-               (id)
-               (number))
-             (default_arg
-               (id)
-               (number))))))))
+  (array
+    (function_application
+      (id)
+      (args
+        (number)
+        (number)
+        (default_arg
+          (id)
+          (number))))
+    (function_application
+      (id)
+      (args
+        (default_arg
+          (id)
+          (number))))
+    (function_application
+      (id)
+      (args
+        (default_arg
+          (id)
+          (number))
+        (default_arg
+          (id)
+          (number))))))

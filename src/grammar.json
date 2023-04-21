@@ -3,10 +3,6 @@
   "rules": {
     "source_file": {
       "type": "SYMBOL",
-      "name": "expr"
-    },
-    "expr": {
-      "type": "SYMBOL",
       "name": "_expr"
     },
     "_expr": {
@@ -1092,7 +1088,7 @@
               "members": [
                 {
                   "type": "SYMBOL",
-                  "name": "expr"
+                  "name": "_expr"
                 },
                 {
                   "type": "REPEAT",
@@ -1105,7 +1101,7 @@
                       },
                       {
                         "type": "SYMBOL",
-                        "name": "expr"
+                        "name": "_expr"
                       }
                     ]
                   }
@@ -1301,7 +1297,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "expr"
+              "name": "_expr"
             }
           ]
         }
@@ -1323,7 +1319,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "expr"
+              "name": "_expr"
             }
           ]
         },
@@ -1401,7 +1397,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "expr"
+              "name": "_expr"
             }
           ]
         }
@@ -1473,7 +1469,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "expr"
+          "name": "_expr"
         }
       ]
     },
@@ -1699,7 +1695,7 @@
                 },
                 {
                   "type": "SYMBOL",
-                  "name": "expr"
+                  "name": "_expr"
                 }
               ]
             },
@@ -1721,7 +1717,7 @@
             "name": "indexobj",
             "content": {
               "type": "SYMBOL",
-              "name": "expr"
+              "name": "_expr"
             }
           },
           {
@@ -2219,7 +2215,7 @@
             "name": "true_expr",
             "content": {
               "type": "SYMBOL",
-              "name": "expr"
+              "name": "_expr"
             }
           },
           {
@@ -2368,7 +2364,7 @@
   ],
   "conflicts": [
     [
-      "expr",
+      "_expr",
       "computed_array"
     ],
     [

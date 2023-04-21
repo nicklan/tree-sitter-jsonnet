@@ -1,6 +1,6 @@
-=============
+================================================================================
 line comments
-=============
+================================================================================
 
 // top comment
 [ # here
@@ -10,19 +10,16 @@ line comments
 // hah
 # here
 
----
+--------------------------------------------------------------------------------
 
 (source_file
   (line_comment)
-  (expr
-    (array
-      (line_comment)
-      (expr
-        (number))
-      (line_comment)
-      (expr
-        (number))
-      (line_comment)))
+  (array
+    (line_comment)
+    (number)
+    (line_comment)
+    (number)
+    (line_comment))
   (line_comment)
   (line_comment)
   (line_comment))

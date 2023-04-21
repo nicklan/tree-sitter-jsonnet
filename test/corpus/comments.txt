@@ -1,6 +1,6 @@
-========
+================================================================================
 comments
-========
+================================================================================
 
 /*
 
@@ -25,29 +25,28 @@ block
  here
 ***/
 
----
+--------------------------------------------------------------------------------
 
 (source_file
   (block_comment)
   (line_comment)
   (block_comment)
-  (expr
-    (object
-      (member
-        (field
-          (fieldname
-            (id))
-          (hsep)
-          (value
-            (number))))
-      (block_comment)
-      (member
-        (field
-          (fieldname
-            (id))
-          (hsep)
-          (value
-            (number))))))
+  (object
+    (member
+      (field
+        (fieldname
+          (id))
+        (hsep)
+        (value
+          (number))))
+    (block_comment)
+    (member
+      (field
+        (fieldname
+          (id))
+        (hsep)
+        (value
+          (number)))))
   (block_comment)
   (line_comment)
   (block_comment))

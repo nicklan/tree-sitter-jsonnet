@@ -1,6 +1,6 @@
-======
+================================================================================
 assert
-======
+================================================================================
 
 assert 2 ==2 ;
 
@@ -11,30 +11,28 @@ local x = {
 
 x
 
----
+--------------------------------------------------------------------------------
+
 (source_file
-  (expr
-    (assert_expr
-      (assert
-        (binary_expr
-          (number)
-          (number)))
-      (bind_expr
-        (bind
-          (id)
-          (expr
-            (object
-              (member
-                (assert
-                  (binary_expr
-                    (number)
-                    (number))))
-              (member
-                (field
-                  (fieldname
-                    (id))
-                  (hsep)
-                  (value
-                    (string)))))))
-        (expr
-          (id))))))
+  (assert_expr
+    (assert
+      (binary_expr
+        (number)
+        (number)))
+    (bind_expr
+      (bind
+        (id)
+        (object
+          (member
+            (assert
+              (binary_expr
+                (number)
+                (number))))
+          (member
+            (field
+              (fieldname
+                (id))
+              (hsep)
+              (value
+                (string))))))
+      (id))))

@@ -1,6 +1,6 @@
-=========
+================================================================================
 odd block
-=========
+================================================================================
 [
 |||
   
@@ -37,29 +37,22 @@ odd block
 |||
 ]
 
----
+--------------------------------------------------------------------------------
+
 (source_file
-  (expr
-    (array
-      (expr
-        (string
-          (block_string)))
-      (expr
-        (string
-          (block_string)))
-      (expr
-        (string
-          (block_string)))
-      (line_comment)
-      (expr
-        (string
-          (block_string)))
-      (expr
-        (string
-          (block_string)))
-      (expr
-        (string
-          (block_string)))
-      (expr
-        (string
-          (block_string))))))
+  (array
+    (string
+      (block_string))
+    (string
+      (block_string))
+    (string
+      (block_string))
+    (line_comment)
+    (string
+      (block_string))
+    (string
+      (block_string))
+    (string
+      (block_string))
+    (string
+      (block_string))))

@@ -1,6 +1,6 @@
-========
+================================================================================
 if index
-========
+================================================================================
 {
   get:
     if false then
@@ -9,21 +9,19 @@ if index
       false
 }
 
----
+--------------------------------------------------------------------------------
+
 (source_file
-  (expr
-    (object
-      (member
-        (field
-          (fieldname
-            (id))
-          (hsep)
-          (value
-            (if_expr
-              (false)
-              (expr
-                (index
-                  (expr
-                    (id))
-                  (id)))
-              (false))))))))
+  (object
+    (member
+      (field
+        (fieldname
+          (id))
+        (hsep)
+        (value
+          (if_expr
+            (false)
+            (index
+              (id)
+              (id))
+            (false)))))))

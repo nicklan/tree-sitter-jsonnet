@@ -1,6 +1,6 @@
-========
+================================================================================
 in super
-========
+================================================================================
 
 {
   a:: 1,
@@ -11,57 +11,56 @@ in super
   aa: "a" <= "a" || "a" in super,
 }
 
----
+--------------------------------------------------------------------------------
 
 (source_file
-   (expr
-     (object_addition
-       (object
-         (member
-           (field
-             (fieldname
-               (id))
-             (hsep)
-             (value
-               (number)))))
-       (object
-         (member
-           (field
-             (fieldname
-               (id))
-             (hsep)
-             (value
-               (in_super_expr
-                 (string)))))
-         (member
-           (field
-             (fieldname
-               (id))
-             (hsep)
-             (value
-               (in_super_expr
-                 (binary_expr
-                   (string)
-                   (string))))))
-         (member
-           (field
-             (fieldname
-               (id))
-             (hsep)
-             (value
-               (binary_expr
-                 (string)
-                 (in_super_expr
-                   (string))))))
-         (member
-           (field
-             (fieldname
-               (id))
-             (hsep)
-             (value
-               (binary_expr
-                 (binary_expr
-                   (string)
-                   (string))
-                 (in_super_expr
-                   (string))))))))))
+  (object_addition
+    (object
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (number)))))
+    (object
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (in_super_expr
+              (string)))))
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (in_super_expr
+              (binary_expr
+                (string)
+                (string))))))
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (binary_expr
+              (string)
+              (in_super_expr
+                (string))))))
+      (member
+        (field
+          (fieldname
+            (id))
+          (hsep)
+          (value
+            (binary_expr
+              (binary_expr
+                (string)
+                (string))
+              (in_super_expr
+                (string)))))))))
